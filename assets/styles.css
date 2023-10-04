@@ -6,3 +6,7 @@
 body {
 	background: var(--red);
 }
+
+img {
+	width: 400px;
+}
