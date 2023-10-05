@@ -7,6 +7,6 @@ body {
 	background: var(--red);
 }
 
-img {
+img[src*=".jp"] {
 	width: 400px;
 }
