@@ -12,6 +12,15 @@
 	box-sizing: border-box;
 }
 
+/* TO BE DELETED */
+img[src*=".jp"] {
+	width: 120px;
+}
+
+img[src$=".gif"] {
+	width: 120px;
+}
+
 body {
 	font-family: Hack, monospace;
 	background-color: var(--lightgrey);
@@ -38,10 +47,22 @@ nav {
 	top: 0;
 }
 
-nav ul {
-	list-style-type: none;
+@media only screen and (max-width: 500px) {
+	.dskt-nav {
+		display: none;
+	}
 }
 
-nav ul > li {
-	display: inline;
+@media only screen and (min-width: 501px) {
+	nav > img {
+		display: none;
+	}
+
+	.dskt-nav {
+		list-style-type: none;
+	}
+
+	.dskt-nav > li {
+		display: inline;
+	}
 }
