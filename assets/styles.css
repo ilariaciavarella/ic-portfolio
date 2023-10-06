@@ -10,22 +10,10 @@
   box-sizing: border-box;
 }
 
-/* TO BE DELETED */
-img[src*=".jp"] {
-  width: 120px;
-}
-
-img[src$=".gif"] {
-  width: 120px;
-}
-
 body {
   font-family: Hack, monospace;
   background-color: #f0f5f5;
   width: 100vw;
-  /* TO BE DELETED */
-  overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 h1 {
@@ -77,16 +65,63 @@ nav {
 
 section {
   border-bottom: 1px solid #1c1719;
+  padding: 40px 0;
 }
 
-.intro {
-  margin: 40px 0;
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #1c1719;
+  box-shadow: #1c1719 8px 8px 0;
 }
+.card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-bottom: 1px solid #1c1719;
+}
+.card .caption {
+  padding: 20px;
+}
+.card .caption h4 {
+  margin-bottom: 0.75rem;
+}
+
+.btn {
+  border: 1px solid #1c1719;
+  box-shadow: #1c1719 8px 8px 0;
+  border-radius: 8px;
+  padding: 16px 0;
+  display: block;
+  width: 240px;
+  text-align: center;
+  margin: auto;
+  font-size: inherit;
+  font-family: "Hack", monospace;
+}
+
+.primary {
+  background-color: #2fb6b2;
+  color: white;
+}
+
+.primary:active {
+  background-color: #15514f;
+  box-shadow: none;
+  position: relative;
+  top: 8px;
+  left: 8px;
+}
+
 .intro #greetings {
   margin: 0 16px;
 }
 .intro #greetings h1 {
   text-align: start;
+  margin-bottom: 40px;
 }
 .intro #descr {
   display: flex;
@@ -100,6 +135,9 @@ section {
   padding: 24px 0;
   text-align: center;
 }
+.intro #descr figure {
+  order: 3;
+}
 .intro #descr img {
   border: 1px solid #1c1719;
   border-radius: 2px;
@@ -108,7 +146,21 @@ section {
   height: calc(100vw - 80px);
   object-fit: cover;
   object-position: top;
-  margin: 40px auto;
+  margin: 40px auto 0;
+}
+
+.projects {
+  padding: 40px;
+}
+.projects h1 {
+  color: #d91143;
+  margin-bottom: 40px;
+}
+.projects .card-block {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
 @media only screen and (max-width: 500px) {

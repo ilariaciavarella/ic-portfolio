@@ -5,11 +5,51 @@ $blue: #2fb6b2;
 $darkgrey: #1c1719;
 
 /* MIXINS */
-@mixin bottom-border($light-bg) {
+@mixin one-side-border($light-bg, $side) {
 	@if $light-bg {
-		border-bottom: 1px solid $darkgrey;
+		@if $side == bottom {
+			border-bottom: 1px solid $darkgrey;
+		} @else if $side == top {
+			border-top: 1px solid $darkgrey;
+		} @else if $side == left {
+			border-left: 1px solid $darkgrey;
+		} @else if $side == right {
+			border-right: 1px solid $darkgrey;
+		}
 	} @else {
-		border-bottom: 1px solid $lightgrey;
+		@if $side == bottom {
+			border-bottom: 1px solid $lightgrey;
+		} @else if $side == top {
+			border-top: 1px solid $lightgrey;
+		} @else if $side == left {
+			border-left: 1px solid $lightgrey;
+		} @else if $side == right {
+			border-right: 1px solid $lightgrey;
+		}
+	}
+}
+
+@mixin all-borders($light-bg) {
+	@if $light-bg {
+		border: 1px solid $darkgrey;
+	} @else {
+		border: 1px solid $lightgrey;
+	}
+}
+
+@mixin btn-shadow {
+	box-shadow: $darkgrey 8px 8px 0;
+}
+
+@mixin comp-radius {
+	border-radius: 8px;
+}
+
+@function bg-colour($parent-colour) {
+	@if ($parent-colour == $blue) {
+		@return $red;
+	} @else {
+		@return $blue;
 	}
 }
 
@@ -23,23 +63,10 @@ $darkgrey: #1c1719;
 	box-sizing: border-box;
 }
 
-/* TO BE DELETED */
-img[src*=".jp"] {
-	width: 120px;
-}
-
-img[src$=".gif"] {
-	width: 120px;
-}
-
 body {
 	font-family: Hack, monospace;
 	background-color: $lightgrey;
 	width: 100vw;
-
-	/* TO BE DELETED */
-	overflow-x: hidden;
-	overflow-y: scroll;
 }
 
 h1 {
@@ -79,7 +106,7 @@ a {
 }
 
 nav {
-	@include bottom-border(true);
+	@include one-side-border(true, bottom);
 	background-color: $lightgrey;
 	padding: 16px;
 	display: flex;
@@ -90,17 +117,67 @@ nav {
 }
 
 section {
-	@include bottom-border(true);
+	@include one-side-border(true, bottom);
+	padding: 40px 0;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	@include comp-radius;
+	overflow: hidden;
+	@include all-borders(true);
+	@include btn-shadow;
+
+	img {
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		@include one-side-border(true, bottom);
+	}
+
+	.caption {
+		padding: 20px;
+		h4 {
+			margin-bottom: 0.75rem;
+		}
+	}
+}
+
+.btn {
+	@include all-borders(true);
+	@include btn-shadow;
+	@include comp-radius;
+	padding: 16px 0;
+	display: block;
+	width: 240px;
+	text-align: center;
+	margin: auto;
+	font-size: inherit;
+	font-family: "Hack", monospace;
+}
+
+.primary {
+	background-color: bg-colour($lightgrey);
+	color: white;
+}
+
+.primary:active {
+	background-color: darken(bg-colour($lightgrey), 25%);
+	box-shadow: none;
+	position: relative;
+	top: 8px;
+	left: 8px;
 }
 
 .intro {
-	margin: 40px 0;
-
 	#greetings {
 		margin: 0 16px;
 
 		h1 {
 			text-align: start;
+			margin-bottom: 40px;
 		}
 	}
 
@@ -110,7 +187,7 @@ section {
 
 		h2,
 		figure {
-			border-top: 1px solid $darkgrey;
+			@include one-side-border(true, top);
 		}
 
 		h2 {
@@ -118,16 +195,36 @@ section {
 			text-align: center;
 		}
 
+		figure {
+			order: 3;
+		}
+
 		img {
-			border: 1px solid $darkgrey;
+			@include all-borders(true);
 			border-radius: 2px;
 			display: block;
 			width: calc(100vw - 80px);
 			height: calc(100vw - 80px);
 			object-fit: cover;
 			object-position: top;
-			margin: 40px auto;
+			margin: 40px auto 0;
 		}
+	}
+}
+
+.projects {
+	padding: 40px;
+
+	h1 {
+		color: $red;
+		margin-bottom: 40px;
+	}
+
+	.card-block {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		margin-bottom: 40px;
 	}
 }
 
