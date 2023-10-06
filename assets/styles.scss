@@ -1,0 +1,168 @@
+/* GLOBAL */
+$lightgrey: #f0f5f5;
+$red: #d91143;
+$blue: #2fb6b2;
+$darkgrey: #1c1719;
+
+/* MIXINS */
+@mixin bottom-border($light-bg) {
+	@if $light-bg {
+		border-bottom: 1px solid $darkgrey;
+	} @else {
+		border-bottom: 1px solid $lightgrey;
+	}
+}
+
+:root {
+	font-size: calc(15px + 0.390625vw);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* TO BE DELETED */
+img[src*=".jp"] {
+	width: 120px;
+}
+
+img[src$=".gif"] {
+	width: 120px;
+}
+
+body {
+	font-family: Hack, monospace;
+	background-color: $lightgrey;
+	width: 100vw;
+
+	/* TO BE DELETED */
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+h1 {
+	font-size: 3rem;
+	font-weight: normal;
+	text-align: center;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: bold;
+	line-height: 1.4;
+	letter-spacing: 0.36rem;
+}
+
+h3 {
+	font-size: 2rem;
+	font-weight: normal;
+	line-height: 1.4;
+	letter-spacing: 0.36rem;
+}
+
+h4 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	letter-spacing: 0.36rem;
+}
+
+p {
+	font-size: 1rem;
+	letter-spacing: 0.05rem;
+	line-height: 1.4;
+}
+
+a {
+	text-decoration: none;
+}
+
+nav {
+	@include bottom-border(true);
+	background-color: $lightgrey;
+	padding: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: sticky;
+	top: 0;
+}
+
+section {
+	@include bottom-border(true);
+}
+
+.intro {
+	margin: 40px 0;
+
+	#greetings {
+		margin: 0 16px;
+
+		h1 {
+			text-align: start;
+		}
+	}
+
+	#descr {
+		display: flex;
+		flex-direction: column;
+
+		h2,
+		figure {
+			border-top: 1px solid $darkgrey;
+		}
+
+		h2 {
+			padding: 24px 0;
+			text-align: center;
+		}
+
+		img {
+			border: 1px solid $darkgrey;
+			border-radius: 2px;
+			display: block;
+			width: calc(100vw - 80px);
+			height: calc(100vw - 80px);
+			object-fit: cover;
+			object-position: top;
+			margin: 40px auto;
+		}
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.dskt-nav {
+		display: none;
+	}
+
+	/* #mobile-menu {
+		display: none;
+	}
+
+	.menu-style {
+		width: 100vw;
+		height: 100vh;
+		padding: 16px 40px;
+		background-color: var(--darkgrey);
+		color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	} */
+}
+
+/* @media only screen and (min-width: 501px) {
+	nav > img {
+		display: none;
+	}
+
+	.dskt-nav {
+		list-style-type: none;
+	}
+
+	.dskt-nav > li {
+		display: inline;
+	}
+}
+ */
