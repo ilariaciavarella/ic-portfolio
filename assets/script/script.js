@@ -13,7 +13,6 @@ menuBtn.addEventListener("click", () => {
     nav.style.background = "#1c1719"
     nav.style.color = "white";
     nav.style.transition = "300ms ease-in-out";
-    document.getElementsByTagName("body")[0].style.height = "100vh";
     document.getElementsByTagName("body")[0].style.overflow = "hidden";
 })
 
