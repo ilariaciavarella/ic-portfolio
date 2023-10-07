@@ -1,0 +1,59 @@
+@mixin one-side-border($light-bg, $side) {
+	@if $light-bg {
+		@if $side == bottom {
+			border-bottom: 1px solid $darkgrey;
+		} @else if $side == top {
+			border-top: 1px solid $darkgrey;
+		} @else if $side == left {
+			border-left: 1px solid $darkgrey;
+		} @else if $side == right {
+			border-right: 1px solid $darkgrey;
+		}
+	} @else {
+		@if $side == bottom {
+			border-bottom: 1px solid $lightgrey;
+		} @else if $side == top {
+			border-top: 1px solid $lightgrey;
+		} @else if $side == left {
+			border-left: 1px solid $lightgrey;
+		} @else if $side == right {
+			border-right: 1px solid $lightgrey;
+		}
+	}
+}
+
+@mixin all-borders($light-bg) {
+	@if $light-bg {
+		border: 1px solid $darkgrey;
+	} @else {
+		border: 1px solid $lightgrey;
+	}
+}
+
+@mixin btn-shadow {
+	box-shadow: $darkgrey 8px 8px 0;
+}
+
+@mixin comp-radius {
+	border-radius: 8px;
+}
+
+@function bg-colour($parent-colour) {
+	@if ($parent-colour == $blue) {
+		@return $red;
+	} @else {
+		@return $blue;
+	}
+}
+
+@function switch-colour($current-colour) {
+	@if ($current-colour == $blue) {
+		@return $red;
+	} @else if ($current-colour == $red) {
+		@return $blue;
+	} @else if ($current-colour == $lightgrey) {
+		@return $darkgrey;
+	} @else if ($current-colour == $darkgrey) {
+		@return $lightgrey;
+	}
+}
