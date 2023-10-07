@@ -1,11 +1,8 @@
 /* GLOBAL */
-$lightgrey: #f0f5f5;
-$red: #d91143;
-$blue: #2fb6b2;
-$darkgrey: #1c1719;
 
 // IMPORT PARTIALS
-@use "funct-mix";
+@use "var";
+@use "func-mix";
 @use "components";
 
 :root {
@@ -20,7 +17,7 @@ $darkgrey: #1c1719;
 
 body {
 	font-family: Hack, monospace;
-	background-color: $red;
+	background-color: var.$lightgrey;
 	width: 100vw;
 }
 
@@ -61,8 +58,8 @@ a {
 }
 
 nav {
-	@include one-side-border(true, bottom);
-	background-color: $lightgrey;
+	@include func-mix.one-border(true, bottom);
+	background-color: var.$lightgrey;
 	padding: 16px;
 	display: flex;
 	align-items: center;
@@ -72,7 +69,7 @@ nav {
 }
 
 section {
-	@include one-side-border(true, bottom);
+	@include func-mix.one-border(true, bottom);
 	padding: 40px 0;
 }
 
@@ -80,16 +77,16 @@ section {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	@include comp-radius;
+	@include func-mix.comp-radius;
 	overflow: hidden;
-	@include all-borders(true);
-	@include btn-shadow;
+	@include func-mix.all-borders(true);
+	@include func-mix.btn-shadow;
 
 	img {
 		width: 100%;
 		aspect-ratio: 1 / 1;
 		object-fit: cover;
-		@include one-side-border(true, bottom);
+		@include func-mix.one-border(true, bottom);
 	}
 
 	.caption {
@@ -97,38 +94,6 @@ section {
 		h4 {
 			margin-bottom: 0.75rem;
 		}
-	}
-}
-
-.btn {
-	@include all-borders(true);
-	@include btn-shadow;
-	@include comp-radius;
-	padding: 16px 0;
-	display: block;
-	width: 240px;
-	text-align: center;
-	margin: auto;
-	font-size: inherit;
-	font-family: "Hack", monospace;
-}
-
-.primary {
-	background-color: bg-colour($lightgrey);
-	color: white;
-	position: static;
-	top: 0;
-	left: 0;
-	transition: 300ms ease-in-out;
-
-	&:hover {
-		background-color: switch-colour(bg-colour($lightgrey));
-	}
-
-	&:active {
-		background-color: darken(bg-colour($lightgrey), 25%);
-		box-shadow: none;
-		transform: translate(8px, 8px);
 	}
 }
 
@@ -148,7 +113,7 @@ section {
 
 		h2,
 		figure {
-			@include one-side-border(true, top);
+			@include func-mix.one-border(true, top);
 		}
 
 		h2 {
@@ -161,7 +126,7 @@ section {
 		}
 
 		img {
-			@include all-borders(true);
+			@include func-mix.all-borders(true);
 			border-radius: 2px;
 			display: block;
 			width: calc(100vw - 80px);
@@ -177,7 +142,7 @@ section {
 	padding: 40px;
 
 	h1 {
-		color: $red;
+		color: var.$red;
 		margin-bottom: 40px;
 	}
 

@@ -1,0 +1,69 @@
+@use "var";
+
+@mixin one-border($light-bg, $side) {
+	@if $light-bg {
+		@if $side == bottom {
+			border-bottom: 1px solid var.$darkgrey;
+		} @else if $side == top {
+			border-top: 1px solid var.$darkgrey;
+		} @else if $side == left {
+			border-left: 1px solid var.$darkgrey;
+		} @else if $side == right {
+			border-right: 1px solid var.$darkgrey;
+		}
+	} @else {
+		@if $side == bottom {
+			border-bottom: 1px solid var.$lightgrey;
+		} @else if $side == top {
+			border-top: 1px solid var.$lightgrey;
+		} @else if $side == left {
+			border-left: 1px solid var.$lightgrey;
+		} @else if $side == right {
+			border-right: 1px solid var.$lightgrey;
+		}
+	}
+}
+
+@mixin all-borders($light-bg) {
+	@if $light-bg {
+		border: 1px solid var.$darkgrey;
+	} @else {
+		border: 1px solid var.$lightgrey;
+	}
+}
+
+@mixin btn-shadow {
+	box-shadow: var.$darkgrey 8px 8px 0;
+}
+
+@mixin comp-radius {
+	border-radius: 8px;
+}
+
+@function primary-bg-colour($parent-colour) {
+	@if ($parent-colour == var.$blue) {
+		@return var.$red;
+	} @else {
+		@return var.$blue;
+	}
+}
+
+@function switch-colour($current-colour) {
+	@if ($current-colour == var.$blue) {
+		@return var.$red;
+	} @else if ($current-colour == var.$red) {
+		@return var.$blue;
+	} @else if ($current-colour == var.$lightgrey) {
+		@return var.$darkgrey;
+	} @else if ($current-colour == var.$darkgrey) {
+		@return var.$lightgrey;
+	}
+}
+
+@function text-colour($bg-colour) {
+	@if (lightness($bg-colour) > 60) {
+		@return black;
+	} @else {
+		@return white;
+	}
+}

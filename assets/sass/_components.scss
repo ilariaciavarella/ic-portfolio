@@ -1,7 +1,59 @@
-/* CARDS */
+@use "func-mix";
+@use "var";
 
-/* BUTTONS */
+// CARDS
 
-/* primary */
+// BUTTONS
+.btn {
+	@include func-mix.all-borders(true);
+	@include func-mix.btn-shadow;
+	@include func-mix.comp-radius;
+	padding: 16px 0;
+	display: block;
+	width: 240px;
+	text-align: center;
+	margin: auto;
+	font-size: inherit;
+	font-family: "Hack", monospace;
+	cursor: pointer;
 
-/* secondary */
+	position: static;
+	top: 0;
+	left: 0;
+	transition: 300ms ease-in-out;
+
+	&:active {
+		box-shadow: none;
+		transform: translate(8px, 8px);
+	}
+}
+
+.primary {
+	background-color: func-mix.primary-bg-colour(var.$lightgrey);
+	color: white;
+
+	&:hover {
+		background-color: darken(func-mix.primary-bg-colour(var.$lightgrey), 12%);
+	}
+
+	&:active {
+		background-color: darken(func-mix.primary-bg-colour(var.$lightgrey), 25%);
+	}
+}
+
+.secondary {
+	background-color: var.$lightgrey;
+	color: black;
+
+	&:hover {
+		background-color: darken(var.$lightgrey, 12%);
+	}
+
+	&:active {
+		background-color: darken(var.$lightgrey, 25%);
+	}
+}
+
+// primary
+
+// secondary
