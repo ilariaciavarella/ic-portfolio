@@ -4,6 +4,7 @@ const mobileMenu = document.getElementById("mobile-menu");
 const closeBtn = document.getElementById("close-btn");
 const nav = document.getElementById("nav");
 
+
 menuBtn.addEventListener("click", () => {
     mobileMenu.style.clipPath = "inset(0 0 0 0)"
     mobileMenu.style.transition = "300ms ease-in-out";
@@ -12,6 +13,7 @@ menuBtn.addEventListener("click", () => {
     nav.style.background = "#1c1719"
     nav.style.color = "white";
     nav.style.transition = "300ms ease-in-out";
+    document.getElementsByTagName("body")[0].style.overflow = "hidden";
 })
 
 closeBtn.addEventListener("click", () => {
@@ -22,6 +24,7 @@ closeBtn.addEventListener("click", () => {
     nav.style.background = "#f0f5f5"
     nav.style.color = "black";
     nav.style.transition = "300ms ease-in-out";
+    document.getElementsByTagName("body")[0].style.overflow = "visible";
 })
 
 //MOBILE PIC & NAME ANIMATIONS
