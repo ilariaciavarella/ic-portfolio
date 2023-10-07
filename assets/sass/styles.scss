@@ -60,6 +60,7 @@ a {
 
 /* NAV */
 nav {
+	height: 80px;
 	@include func-mix.one-border(true, bottom);
 	background-color: var.$lightgrey;
 	padding: 16px;
@@ -69,15 +70,57 @@ nav {
 	position: sticky;
 	top: 0;
 
-	span {
-		font-weight: bold;
-		letter-spacing: 0.16rem;
+	#close-btn {
+		display: none;
 	}
 }
 
+.logo {
+	font-weight: bold;
+	letter-spacing: 0.16rem;
+}
+
 #mobile-menu {
-	position: absolute;
-	left: calc(100vw + 5px);
+	position: fixed;
+	top: 80px;
+	width: 100vw;
+	height: calc(100vh - 80px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var.$darkgrey;
+	color: white;
+	padding: 40% 0 10% 0;
+	overflow: auto;
+
+	.mobile-nav {
+		list-style-type: none;
+		width: 100vw;
+		margin-bottom: 40px;
+		a {
+			display: block;
+			padding: 36px;
+			text-align: center;
+			@include func-mix.one-border(false, top);
+
+			&:last-of-type {
+				@include func-mix.one-border(false, bottom);
+			}
+
+			&:active {
+				background-color: transparentize(var.$red, 0.75);
+			}
+		}
+	}
+
+	a > img {
+		filter: invert(100%);
+		width: 40px;
+		margin: 0 12px;
+	}
+
+	clip-path: inset(0 0 100% 0);
 }
 
 /* MAIN */
