@@ -4,54 +4,9 @@ $red: #d91143;
 $blue: #2fb6b2;
 $darkgrey: #1c1719;
 
-/* MIXINS */
-@mixin one-side-border($light-bg, $side) {
-	@if $light-bg {
-		@if $side == bottom {
-			border-bottom: 1px solid $darkgrey;
-		} @else if $side == top {
-			border-top: 1px solid $darkgrey;
-		} @else if $side == left {
-			border-left: 1px solid $darkgrey;
-		} @else if $side == right {
-			border-right: 1px solid $darkgrey;
-		}
-	} @else {
-		@if $side == bottom {
-			border-bottom: 1px solid $lightgrey;
-		} @else if $side == top {
-			border-top: 1px solid $lightgrey;
-		} @else if $side == left {
-			border-left: 1px solid $lightgrey;
-		} @else if $side == right {
-			border-right: 1px solid $lightgrey;
-		}
-	}
-}
-
-@mixin all-borders($light-bg) {
-	@if $light-bg {
-		border: 1px solid $darkgrey;
-	} @else {
-		border: 1px solid $lightgrey;
-	}
-}
-
-@mixin btn-shadow {
-	box-shadow: $darkgrey 8px 8px 0;
-}
-
-@mixin comp-radius {
-	border-radius: 8px;
-}
-
-@function bg-colour($parent-colour) {
-	@if ($parent-colour == $blue) {
-		@return $red;
-	} @else {
-		@return $blue;
-	}
-}
+// IMPORT PARTIALS
+@use "funct-mix";
+@use "components";
 
 :root {
 	font-size: calc(15px + 0.390625vw);
@@ -65,7 +20,7 @@ $darkgrey: #1c1719;
 
 body {
 	font-family: Hack, monospace;
-	background-color: $lightgrey;
+	background-color: $red;
 	width: 100vw;
 }
 
@@ -164,13 +119,17 @@ section {
 	position: static;
 	top: 0;
 	left: 0;
-	transition: 500ms ease-in-out;
-}
+	transition: 300ms ease-in-out;
 
-.primary:active {
-	background-color: darken(bg-colour($lightgrey), 25%);
-	box-shadow: none;
-	transform: translate(8px, 8px);
+	&:hover {
+		background-color: switch-colour(bg-colour($lightgrey));
+	}
+
+	&:active {
+		background-color: darken(bg-colour($lightgrey), 25%);
+		box-shadow: none;
+		transform: translate(8px, 8px);
+	}
 }
 
 .intro {
