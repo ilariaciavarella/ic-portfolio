@@ -60,7 +60,7 @@ a {
 }
 
 nav {
-	/* @include one-side-border(true, bottom); */
+	@include one-side-border(true, bottom);
 	background-color: $lightgrey;
 	padding: 16px;
 	display: flex;
