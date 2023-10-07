@@ -2,6 +2,37 @@
 @use "var";
 
 // CARDS
+.card {
+	background-color: var.$lightgrey;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	@include func-mix.comp-radius;
+	overflow: hidden;
+	@include func-mix.all-borders(true);
+	@include func-mix.btn-shadow;
+	@include func-mix.click-start;
+
+	img {
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		@include func-mix.one-border(true, bottom);
+	}
+
+	.caption {
+		padding: 20px;
+		h4 {
+			margin-bottom: 0.75rem;
+		}
+	}
+
+	&:active {
+		@include func-mix.click-end;
+		filter: brightness(75%);
+		background-color: darken(var.$lightgrey, 25%);
+	}
+}
 
 // BUTTONS
 .btn {
@@ -15,32 +46,42 @@
 	margin: auto;
 	font-size: inherit;
 	font-family: "Hack", monospace;
-	cursor: pointer;
 
-	position: static;
-	top: 0;
-	left: 0;
-	transition: 300ms ease-in-out;
+	@include func-mix.click-start;
 
 	&:active {
-		box-shadow: none;
-		transform: translate(8px, 8px);
+		@include func-mix.click-end;
 	}
 }
 
-.primary {
-	background-color: func-mix.primary-bg-colour(var.$lightgrey);
+// primary
+.primary-blue {
+	background-color: var.$blue;
 	color: white;
 
 	&:hover {
-		background-color: darken(func-mix.primary-bg-colour(var.$lightgrey), 12%);
+		background-color: darken(var.$blue, 12%);
 	}
 
 	&:active {
-		background-color: darken(func-mix.primary-bg-colour(var.$lightgrey), 25%);
+		background-color: darken(var.$blue, 25%);
 	}
 }
 
+.primary-red {
+	background-color: var.$red;
+	color: white;
+
+	&:hover {
+		background-color: darken(var.$red, 12%);
+	}
+
+	&:active {
+		background-color: darken(var.$red, 25%);
+	}
+}
+
+// secondary
 .secondary {
 	background-color: var.$lightgrey;
 	color: black;
@@ -54,6 +95,15 @@
 	}
 }
 
-// primary
+//icon
+.icon {
+	border: none;
+	background: none;
+	@include func-mix.comp-radius;
+	display: flex;
+	align-items: center;
 
-// secondary
+	&:active {
+		background-color: darken(var.$lightgrey, 25%);
+	}
+}

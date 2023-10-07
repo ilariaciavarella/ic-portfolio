@@ -55,8 +55,10 @@ p {
 
 a {
 	text-decoration: none;
+	color: inherit;
 }
 
+/* NAV */
 nav {
 	@include func-mix.one-border(true, bottom);
 	background-color: var.$lightgrey;
@@ -66,37 +68,25 @@ nav {
 	justify-content: space-between;
 	position: sticky;
 	top: 0;
+
+	span {
+		font-weight: bold;
+		letter-spacing: 0.16rem;
+	}
 }
 
+#mobile-menu {
+	position: absolute;
+	left: calc(100vw + 5px);
+}
+
+/* MAIN */
 section {
 	@include func-mix.one-border(true, bottom);
 	padding: 40px 0;
 }
 
-.card {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	@include func-mix.comp-radius;
-	overflow: hidden;
-	@include func-mix.all-borders(true);
-	@include func-mix.btn-shadow;
-
-	img {
-		width: 100%;
-		aspect-ratio: 1 / 1;
-		object-fit: cover;
-		@include func-mix.one-border(true, bottom);
-	}
-
-	.caption {
-		padding: 20px;
-		h4 {
-			margin-bottom: 0.75rem;
-		}
-	}
-}
-
+/* Section 1 */
 .intro {
 	#greetings {
 		margin: 0 16px;
@@ -138,6 +128,7 @@ section {
 	}
 }
 
+/* Section 2 */
 .projects {
 	padding: 40px;
 
@@ -154,6 +145,77 @@ section {
 	}
 }
 
+/* Section 3 */
+.contact {
+	padding: 40px 16px;
+	background-color: var.$blue;
+	h1 {
+		color: white;
+		margin-bottom: 40px;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+
+		.question {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+
+		label {
+			color: white;
+			font-weight: bold;
+			letter-spacing: 0.36rem;
+			padding-left: 2px;
+		}
+
+		input[type="text"],
+		input[type="email"],
+		textarea {
+			padding: 16px 24px;
+			@include func-mix.all-borders(true);
+			@include func-mix.comp-radius;
+			background-color: var.$lightgrey;
+			font-family: inherit;
+			font-size: inherit;
+		}
+
+		button {
+			margin-top: 12px;
+		}
+	}
+}
+
+/* FOOTER */
+footer {
+	background-color: var.$red;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+	color: white;
+	padding: 40px 16px;
+	text-align: center;
+
+	a {
+		margin-right: 24px;
+	}
+
+	a:last-of-type {
+		margin-right: 0px;
+	}
+
+	a:active {
+		path {
+			fill: darken(var.$red, 25%);
+		}
+	}
+}
+
+/* MEDIA QUERIES */
 @media only screen and (max-width: 500px) {
 	.dskt-nav {
 		display: none;
@@ -175,8 +237,20 @@ section {
 	} */
 }
 
-/* @media only screen and (min-width: 501px) {
-	nav > img {
+@media only screen and (min-width: 501px) {
+	.card {
+		img {
+			filter: grayscale(100%);
+		}
+
+		&:hover {
+			img {
+				filter: none;
+			}
+			background-color: darken(var.$lightgrey, 12%);
+		}
+	}
+	/* nav > img {
 		display: none;
 	}
 
@@ -186,6 +260,5 @@ section {
 
 	.dskt-nav > li {
 		display: inline;
-	}
+	} */
 }
- */
