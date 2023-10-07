@@ -161,14 +161,16 @@ section {
 .primary {
 	background-color: bg-colour($lightgrey);
 	color: white;
+	position: static;
+	top: 0;
+	left: 0;
+	transition: 500ms ease-in-out;
 }
 
 .primary:active {
 	background-color: darken(bg-colour($lightgrey), 25%);
 	box-shadow: none;
-	position: relative;
-	top: 8px;
-	left: 8px;
+	transform: translate(8px, 8px);
 }
 
 .intro {
