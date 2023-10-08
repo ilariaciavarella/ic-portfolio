@@ -259,7 +259,6 @@ nav .dskt-nav > li {
 /* MAIN */
 section {
   border-bottom: 1px solid #1c1719;
-  padding: 40px 0;
 }
 
 /* Section 1 */
@@ -268,32 +267,20 @@ section {
 }
 .intro #greetings h1 {
   text-align: start;
-  margin-bottom: 40px;
 }
 .intro #descr {
   display: flex;
-  flex-direction: column;
-}
-.intro #descr h2,
-.intro #descr figure {
-  border-top: 1px solid #1c1719;
 }
 .intro #descr h2 {
-  padding: 24px 0;
   text-align: center;
-}
-.intro #descr figure {
-  order: 3;
 }
 .intro #descr img {
   border: 1px solid #1c1719;
   border-radius: 2px;
+  aspect-ratio: 1/1;
   display: block;
-  width: calc(100vw - 80px);
-  height: calc(100vw - 80px);
   object-fit: cover;
   object-position: top;
-  margin: 40px auto 0;
 }
 
 /* Section 2 */
@@ -380,10 +367,66 @@ footer a:active path {
   #menu-btn {
     display: flex;
   }
+  section {
+    padding: 40px 0;
+  }
+  #greetings h1 {
+    margin-bottom: 40px;
+  }
+  #descr {
+    flex-direction: column;
+  }
+  #descr h2 {
+    border-bottom: 1px solid #1c1719;
+    padding: 24px 0;
+  }
+  #descr h2:first-of-type {
+    border-top: 1px solid #1c1719;
+  }
+  #descr img {
+    order: 3;
+    width: calc(100vw - 80px);
+    margin: 40px auto 0;
+  }
 }
 @media only screen and (min-width: 664px) {
   #menu-btn {
     display: none;
+  }
+  section {
+    height: calc(100vh - 80px);
+    overflow: hidden;
+  }
+  .intro #greetings {
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+  }
+  .intro #descr {
+    height: 65%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    border-top: 1px solid #1c1719;
+  }
+  .intro h2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .intro h2:first-of-type {
+    border-right: 1px solid #1c1719;
+  }
+  .intro h2:last-of-type {
+    border-left: 1px solid #1c1719;
+  }
+  .intro img {
+    max-height: calc(100% - 112px);
+    margin: 56px;
   }
 }
 /* Device change */
