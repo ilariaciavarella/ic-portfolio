@@ -61,42 +61,47 @@
 		<nav id="nav">
 			<span class="logo"><a href="">ILARIA CIAVARELLA</a></span>
 			<ul class="dskt-nav">
-				<li><a href="/portfolio/">PORTFOLIO</a></li>
-				<li><a href="/about/">ABOUT</a></li>
-				<li><a href="/contact/">CONTACT</a></li>
+				<li><a class="nav-link" href="/portfolio/">PORTFOLIO</a></li>
+				<li><a class="nav-link" href="/about/">ABOUT</a></li>
+				<li><a class="nav-link" href="/contact/">CONTACT</a></li>
 			</ul>
-			<button class="icon" id="menu-btn">
+			<button class="icon" id="menu-btn" onclick="openMenu()">
 				<img src="assets/img/nav_mobile/nav-menu.svg" alt="Menu icon" />
 			</button>
-			<button class="icon" id="close-btn">
+			<button class="icon" id="close-btn" onclick="closeMenu()">
 				<img src="assets/img/nav_mobile/nav-close.svg" alt="Close icon" />
 			</button>
-		</nav>
 
-		<!--Mobile menu-->
-		<div id="mobile-menu">
-			<ul class="mobile-nav">
-				<li><a href="portfolio/">PORTFOLIO</a></li>
-				<li><a href="about/">ABOUT</a></li>
-				<li><a href="contact/">CONTACT</a></li>
-			</ul>
-			<div>
-				<a
-					href="www.linkedin.com/in/ilaria-ciavarella
+			<!--Mobile menu-->
+			<div id="mobile-menu">
+				<div id="menu-content">
+					<div class="spacing"></div>
+					<ul class="mobile-nav">
+						<li><a href="portfolio/">PORTFOLIO</a></li>
+						<li><a href="about/">ABOUT</a></li>
+						<li><a href="contact/">CONTACT</a></li>
+					</ul>
+					<div>
+						<a
+							href="www.linkedin.com/in/ilaria-ciavarella
 					
-				">
-					<img src="assets/img/social_icons/linkedin.svg" alt="LinkedIn logo" />
-				</a>
-				<a href="https://github.com/ilariaciavarella">
-					<img src="assets/img/social_icons/github.svg" alt="GitHub logo" />
-				</a>
-				<a href="https://www.instagram.com/lil.ciavarella/">
-					<img
-						src="assets/img/social_icons/instagram.svg"
-						alt="Instagram logo" />
-				</a>
+					">
+							<img
+								src="assets/img/social_icons/linkedin.svg"
+								alt="LinkedIn logo" />
+						</a>
+						<a href="https://github.com/ilariaciavarella">
+							<img src="assets/img/social_icons/github.svg" alt="GitHub logo" />
+						</a>
+						<a href="https://www.instagram.com/lil.ciavarella/">
+							<img
+								src="assets/img/social_icons/instagram.svg"
+								alt="Instagram logo" />
+						</a>
+					</div>
+				</div>
 			</div>
-		</div>
+		</nav>
 
 		<main>
 			<section class="intro">
@@ -206,6 +211,7 @@
 				</form>
 			</section>
 		</main>
+
 		<footer>
 			<div>
 				<strong>Can&rsquo;t wait to work with you!</strong> Don&rsquo;t hesitate

@@ -107,3 +107,38 @@
 		background-color: darken(var.$lightgrey, 25%);
 	}
 }
+
+//nav
+.nav-link {
+	display: inline-block;
+	position: relative;
+	padding: 8px 6px;
+
+	&::after {
+		content: "";
+
+		position: absolute;
+		width: 100%;
+		transform: scaleX(0);
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: var.$darkgrey;
+		transform-origin: bottom center;
+		transition: transform 300ms ease-in-out;
+	}
+
+	&:hover {
+		font-weight: bold;
+		&::after {
+			transform: scaleX(1);
+		}
+	}
+
+	&:active {
+		color: var.$blue;
+		&::after {
+			background-color: var.$blue;
+		}
+	}
+}
