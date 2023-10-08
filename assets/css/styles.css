@@ -163,9 +163,17 @@ nav {
   justify-content: space-between;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 nav #close-btn {
   display: none;
+}
+nav .dskt-nav {
+  list-style-type: none;
+}
+nav .dskt-nav > li {
+  display: inline;
+  margin-left: 8vw;
 }
 
 .logo {
@@ -219,7 +227,7 @@ section {
 
 /* Section 1 */
 .intro #greetings {
-  margin: 0 16px;
+  padding: 0 16px;
 }
 .intro #greetings h1 {
   text-align: start;
@@ -327,7 +335,8 @@ footer a:active path {
 }
 
 /* MEDIA QUERIES */
-@media only screen and (max-width: 500px) {
+/* Nav change */
+@media only screen and (max-width: 663px) {
   .dskt-nav {
     display: none;
   }
@@ -346,7 +355,13 @@ footer a:active path {
   	justify-content: space-between;
   } */
 }
-@media only screen and (min-width: 501px) {
+@media only screen and (min-width: 664px) {
+  #menu-btn {
+    display: none;
+  }
+}
+/* Device change */
+@media only screen and (hover: hover) {
   .card img {
     filter: grayscale(100%);
   }
@@ -356,15 +371,4 @@ footer a:active path {
   .card:hover img {
     filter: none;
   }
-  /* nav > img {
-  	display: none;
-  }
-
-  .dskt-nav {
-  	list-style-type: none;
-  }
-
-  .dskt-nav > li {
-  	display: inline;
-  } */
 }
