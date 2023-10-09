@@ -6,7 +6,7 @@
 	background-color: var.$lightgrey;
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	max-width: 100%;
 	@include func-mix.comp-radius;
 	overflow: hidden;
 	@include func-mix.all-borders(true);
@@ -39,7 +39,7 @@
 	@include func-mix.all-borders(true);
 	@include func-mix.btn-shadow;
 	@include func-mix.comp-radius;
-	padding: 16px 0;
+	padding: 16px 16px;
 	display: block;
 	width: 240px;
 	text-align: center;
