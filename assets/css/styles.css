@@ -160,9 +160,10 @@ nav #close-btn {
     color: #2fb6b2;
   }
   .nav-link:active::after {
-    background-color: #2fb6b2;
+    background-color: #d91143;
   }
 }
+/* ---------------------------------------------------------- */
 /* BUTTONS */
 .btn {
   border: 1px solid #1c1719;
@@ -218,16 +219,81 @@ nav #close-btn {
 }
 
 .icon {
+  cursor: pointer;
+  padding: 4px;
+  margin-right: -4px;
   border-radius: 8px;
   border: none;
   background: none;
   display: flex;
   align-items: center;
 }
+.icon:hover svg path {
+  stroke: #228582;
+}
 .icon:active {
-  background-color: #a4c2c2;
+  border: 1px solid #2fb6b2;
+  margin-right: -5px;
+}
+.icon:active svg path {
+  stroke: #2fb6b2;
 }
 
+/* ---------------------------------------------------------- */
+/* FOOTER */
+footer {
+  background-color: #d91143;
+  min-height: 140px;
+  text-align: center;
+  line-height: 1.4rem;
+  border-top: 1px solid #1c1719;
+}
+footer div {
+  padding: 40px 0;
+}
+footer .social a {
+  display: inline-block;
+  margin: 0 4px;
+  padding: 4px 4px 0 4px;
+}
+footer .social a:hover svg path {
+  fill: #228582;
+}
+footer .social a:active svg path {
+  fill: #1c1719;
+}
+
+@media screen and (max-width: 663px) {
+  footer {
+    color: white;
+    padding: 0 40px;
+  }
+  footer .cta {
+    padding-bottom: 0;
+  }
+}
+@media only screen and (min-width: 664px) {
+  footer div {
+    padding: 0 16px;
+  }
+  footer .cta {
+    background-color: #f0f5f5;
+    border-right: 1px solid #1c1719;
+    height: 100%;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+  }
+  footer .social {
+    margin: 0 auto;
+    min-width: fit-content;
+  }
+}
 main img {
   display: none;
+}
+
+main {
+  height: 100vh;
+  overflow: hidden;
 }

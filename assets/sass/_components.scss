@@ -1,6 +1,7 @@
 @use "var";
 @use "global-styles";
 @use "reusable";
+@use "sass:math";
 
 /* NAV BAR */
 nav {
@@ -128,14 +129,15 @@ nav {
 		}
 
 		&:active {
-			color: var.$blue;
+			color: reusable.random-col();
 			&::after {
-				background-color: var.$blue;
+				background-color: reusable.random-col();
 			}
 		}
 	}
 }
 
+/* ---------------------------------------------------------- */
 /* BUTTONS */
 .btn {
 	@include reusable.clickable;
@@ -197,13 +199,90 @@ nav {
 
 //icon
 .icon {
+	cursor: pointer;
+	padding: 4px;
+	margin-right: -4px;
 	border-radius: 8px;
 	border: none;
 	background: none;
 	display: flex;
 	align-items: center;
 
+	&:hover {
+		svg path {
+			stroke: reusable.hover-col(reusable.random-col());
+		}
+	}
+
 	&:active {
-		background-color: reusable.active-col(var.$lightgrey);
+		svg path {
+			stroke: reusable.random-col();
+		}
+		border: 1px solid reusable.random-col();
+		margin-right: -5px;
+	}
+}
+
+/* ---------------------------------------------------------- */
+/* FOOTER */
+footer {
+	background-color: reusable.random-col();
+	min-height: 140px;
+	text-align: center;
+	line-height: 1.4rem;
+	border-top: 1px solid var.$darkgrey;
+
+	div {
+		padding: 40px 0;
+	}
+
+	.social a {
+		display: inline-block;
+		margin: 0 4px;
+		padding: 4px 4px 0 4px;
+
+		&:hover {
+			svg path {
+				fill: reusable.hover-col(reusable.random-col());
+			}
+		}
+
+		&:active {
+			svg path {
+				fill: var.$darkgrey;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 663px) {
+	footer {
+		color: white;
+		padding: 0 40px;
+
+		.cta {
+			padding-bottom: 0;
+		}
+	}
+}
+
+@media only screen and (min-width: 664px) {
+	footer {
+		div {
+			padding: 0 16px;
+		}
+		.cta {
+			background-color: var.$lightgrey;
+			border-right: 1px solid var.$darkgrey;
+			height: 100%;
+			min-height: 140px;
+			display: flex;
+			align-items: center;
+		}
+
+		.social {
+			margin: 0 auto;
+			min-width: fit-content;
+		}
 	}
 }

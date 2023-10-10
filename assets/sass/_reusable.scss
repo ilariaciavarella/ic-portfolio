@@ -1,4 +1,5 @@
 @use "var";
+@use "sass:math";
 
 //MIXINS
 // Components
@@ -32,4 +33,13 @@
 //Active colour
 @function active-col($bg) {
 	@return darken($bg, 25%);
+}
+
+//pick random color
+@function random-col() {
+	@if (math.random(100) % 2 == 0) {
+		@return var.$red;
+	} @else {
+		@return var.$blue;
+	}
 }

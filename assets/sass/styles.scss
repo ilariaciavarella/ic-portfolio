@@ -3,7 +3,13 @@
 @use "global-styles";
 @use "components";
 @use "reusable";
+@use "sass:math";
 
 main img {
 	display: none;
+}
+
+main {
+	height: 100vh;
+	overflow: hidden;
 }
