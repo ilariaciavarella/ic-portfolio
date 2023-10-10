@@ -229,7 +229,6 @@ footer {
 	background-color: reusable.random-col();
 	min-height: 140px;
 	text-align: center;
-	line-height: 1.4rem;
 	border-top: 1px solid var.$darkgrey;
 
 	div {
@@ -255,10 +254,10 @@ footer {
 	}
 }
 
-@media screen and (max-width: 663px) {
+@media screen and (max-width: 572px) {
 	footer {
 		color: white;
-		padding: 0 40px;
+		padding: 0 2.5rem;
 
 		.cta {
 			padding-bottom: 0;
@@ -266,23 +265,28 @@ footer {
 	}
 }
 
-@media only screen and (min-width: 664px) {
+@media only screen and (min-width: 573px) {
 	footer {
+		display: flex;
 		div {
-			padding: 0 16px;
+			padding: 0 1.2rem;
 		}
 		.cta {
 			background-color: var.$lightgrey;
 			border-right: 1px solid var.$darkgrey;
-			height: 100%;
-			min-height: 140px;
 			display: flex;
 			align-items: center;
+			justify-content: center;
+			min-width: 60%;
+			flex: 1 1 auto;
 		}
 
 		.social {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			margin: 0 auto;
-			min-width: fit-content;
+			flex: 1 1 10%;
 		}
 	}
 }
