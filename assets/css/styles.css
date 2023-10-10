@@ -62,6 +62,9 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+nav .logo {
+  font-weight: bold;
+}
 nav #close-btn {
   display: none;
 }
@@ -81,7 +84,12 @@ nav #close-btn {
     overflow-y: hidden;
     transition: height 300ms ease-in-out;
   }
+  #mobile-menu .spacing {
+    height: 1px;
+    content: "";
+  }
   #mobile-menu #menu-content {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,9 +98,10 @@ nav #close-btn {
     transition: height 300ms ease-in-out;
     color: white;
   }
-  #mobile-menu .spacing {
-    height: 1px;
-    content: "";
+  #mobile-menu #menu-content img {
+    filter: invert(100%);
+    width: 40px;
+    margin: 0 12px;
   }
   #mobile-menu .mobile-nav {
     list-style-type: none;
@@ -104,16 +113,11 @@ nav #close-btn {
     text-align: center;
     border-top: 1px solid #f0f5f5;
   }
-  #mobile-menu .mobile-nav a:last-of-type {
-    border-bottom: 1px solid #f0f5f5;
-  }
   #mobile-menu .mobile-nav a:active {
     background-color: rgba(217, 17, 67, 0.25);
   }
-  #mobile-menu .mobile-nav a img {
-    filter: invert(100%);
-    width: 40px;
-    margin: 0 12px;
+  #mobile-menu .mobile-nav li:last-of-type a {
+    border-bottom: 1px solid #f0f5f5;
   }
 }
 @media only screen and (min-width: 664px) {
@@ -158,4 +162,72 @@ nav #close-btn {
   .nav-link:active::after {
     background-color: #2fb6b2;
   }
+}
+/* BUTTONS */
+.btn {
+  border: 1px solid #1c1719;
+  box-shadow: #1c1719 8px 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+  padding: 16px;
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  text-align: center;
+  margin: auto;
+  font-size: inherit;
+  font-family: "Hack", monospace;
+}
+.btn:active {
+  box-shadow: none;
+  transform: translate(8px, 8px);
+}
+
+.primary-blue {
+  background-color: #2fb6b2;
+  color: white;
+}
+.primary-blue:hover {
+  background-color: #228582;
+}
+.primary-blue:active {
+  background-color: #15514f;
+}
+
+.primary-red {
+  background-color: #d91143;
+  color: white;
+}
+.primary-red:hover {
+  background-color: #a00d31;
+}
+.primary-red:active {
+  background-color: #63081e;
+}
+
+.secondary {
+  background-color: #f0f5f5;
+  color: black;
+}
+.secondary:hover {
+  background-color: #cbdddd;
+}
+.secondary:active {
+  background-color: #a4c2c2;
+}
+
+.icon {
+  border-radius: 8px;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+}
+.icon:active {
+  background-color: #a4c2c2;
+}
+
+main img {
+  display: none;
 }

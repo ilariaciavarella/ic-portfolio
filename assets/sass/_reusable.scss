@@ -1,0 +1,35 @@
+@use "var";
+
+//MIXINS
+// Components
+@mixin clickable {
+	border: 1px solid var.$darkgrey;
+	box-shadow: var.$darkgrey 8px 8px 0;
+	border-radius: 8px;
+}
+
+@mixin click-start {
+	cursor: pointer;
+	transition: 300ms ease-in-out;
+}
+
+@mixin click-end {
+	box-shadow: none;
+	transform: translate(8px, 8px);
+}
+
+//Images
+@mixin img-style {
+	border: 1px solid var.$darkgrey;
+	border-radius: 2px;
+}
+
+//FUNCTIONS
+//Hover colour
+@function hover-col($bg) {
+	@return darken($bg, 12%);
+}
+//Active colour
+@function active-col($bg) {
+	@return darken($bg, 25%);
+}
