@@ -157,10 +157,10 @@ nav #close-btn {
     transform: scaleX(1);
   }
   .nav-link:active {
-    color: #d91143;
+    color: #2fb6b2;
   }
   .nav-link:active::after {
-    background-color: #d91143;
+    background-color: #2fb6b2;
   }
 }
 /* ---------------------------------------------------------- */
@@ -176,7 +176,7 @@ nav #close-btn {
   width: 100%;
   max-width: 240px;
   text-align: center;
-  margin: auto;
+  margin: 32px auto;
   font-size: inherit;
   font-family: "Hack", monospace;
 }
@@ -240,7 +240,7 @@ nav #close-btn {
 }
 
 .icon-text {
-  margin: 0;
+  margin: 32px 0;
   max-width: 440px;
   display: flex;
   justify-content: flex-start;
@@ -252,6 +252,12 @@ nav #close-btn {
 }
 .icon-text img {
   width: 40px;
+}
+.icon-text:hover {
+  background-color: #cbdddd;
+}
+.icon-text:active {
+  background-color: #a4c2c2;
 }
 
 /* ---------------------------------------------------------- */
@@ -271,7 +277,7 @@ footer .social a {
   padding: 4px 4px 0 4px;
 }
 footer .social a:hover svg path {
-  fill: #a00d31;
+  fill: #228582;
 }
 footer .social a:active svg path {
   fill: #1c1719;

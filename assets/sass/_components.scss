@@ -147,7 +147,7 @@ nav {
 	width: 100%;
 	max-width: 240px;
 	text-align: center;
-	margin: auto;
+	margin: 32px auto;
 	font-size: inherit;
 	font-family: "Hack", monospace;
 
@@ -225,7 +225,7 @@ nav {
 
 //icon-text
 .icon-text {
-	margin: 0;
+	margin: 32px 0;
 	max-width: 440px;
 	display: flex;
 	justify-content: flex-start;
@@ -237,6 +237,14 @@ nav {
 
 	img {
 		width: 40px;
+	}
+
+	&:hover {
+		background-color: reusable.hover-col(var.$lightgrey);
+	}
+
+	&:active {
+		background-color: reusable.active-col(var.$lightgrey);
 	}
 }
 
