@@ -3,10 +3,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="../assets/css/contact.css" />
 		<link
 			rel="stylesheet"
 			href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css" />
+
+		<script src="../assets/script/script.js"></script>
 
 		<title>Ilaria Ciavarella &ndash; Contact</title>
 		<meta
@@ -55,49 +57,88 @@
 		</script>
 	</head>
 	<body>
-		<nav>
-			<span><a href="../">ILARIA CIAVARELLA</a></span>
-			<ul class="dskt-nav">
-				<li><a href="../portfolio/">PORTFOLIO</a></li>
-				<li><a href="../about/">ABOUT</a></li>
-				<li><a href="">CONTACT</a></li>
+		<nav id="nav">
+			<span class="logo"><a href="">ILARIA CIAVARELLA</a></span>
+			<ul class="full-nav">
+				<li><a class="nav-link" href="/portfolio/">PORTFOLIO</a></li>
+				<li><a class="nav-link" href="/about/">ABOUT</a></li>
+				<li><a class="nav-link" href="/contact/">CONTACT</a></li>
 			</ul>
-			<button>
-				<img src="../assets/img/nav_mobile/nav-menu.svg" alt="Menu icon" />
+			<button class="icon" id="menu-btn" onclick="openMenu()">
+				<svg
+					width="40"
+					height="40"
+					viewBox="0 0 40 40"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M5 8H35"
+						stroke="black"
+						stroke-width="2"
+						stroke-linecap="round" />
+					<path
+						d="M5 20H35"
+						stroke="black"
+						stroke-width="2"
+						stroke-linecap="round" />
+					<path
+						d="M5 32H35"
+						stroke="black"
+						stroke-width="2"
+						stroke-linecap="round" />
+				</svg>
+			</button>
+			<button class="icon" id="close-btn" onclick="closeMenu()">
+				<svg
+					width="40"
+					height="40"
+					viewBox="0 0 40 40"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M6.5647 33.435L33.4348 6.56497"
+						stroke="#F0F5F5"
+						stroke-width="2"
+						stroke-linecap="round" />
+					<path
+						d="M6.5647 6.56497L33.4348 33.435"
+						stroke="#F0F5F5"
+						stroke-width="2"
+						stroke-linecap="round" />
+				</svg>
 			</button>
 
-			<div class="mobile-menu">
-				<span>ILARIA CIAVARELLA</span>
-				<button>
-					<img src="../assets/img/nav_mobile/nav-close.svg" alt="Close icon" />
-				</button>
-				<ul class="mobile-nav">
-					<li><a href="../portfolio/">PORTFOLIO</a></li>
-					<li><a href="../about/">ABOUT</a></li>
-					<li><a href="">CONTACT</a></li>
-				</ul>
-				<div>
-					<a
-						href="www.linkedin.com/in/ilaria-ciavarella
-
-">
-						<img
-							src="../assets/img/social_icons/linkedin.svg"
-							alt="LinkedIn logo" />
-					</a>
-					<a href="https://github.com/ilariaciavarella">
-						<img
-							src="../assets/img/social_icons/github.svg"
-							alt="GitHub logo" />
-					</a>
-					<a href="https://www.instagram.com/lil.ciavarella/">
-						<img
-							src="../assets/img/social_icons/instagram.svg"
-							alt="Instagram logo" />
-					</a>
+			<!--Mobile menu-->
+			<div id="mobile-menu">
+				<div id="menu-content">
+					<div class="spacing"></div>
+					<ul class="mobile-nav">
+						<li><a href="portfolio/">PORTFOLIO</a></li>
+						<li><a href="about/">ABOUT</a></li>
+						<li><a href="contact/">CONTACT</a></li>
+					</ul>
+					<div>
+						<a
+							href="https://www.linkedin.com/in/ilaria-ciavarella
+					
+					">
+							<img
+								src="assets/img/social_icons/linkedin.svg"
+								alt="LinkedIn logo" />
+						</a>
+						<a href="https://github.com/ilariaciavarella">
+							<img src="assets/img/social_icons/github.svg" alt="GitHub logo" />
+						</a>
+						<a href="https://www.instagram.com/lil.ciavarella/">
+							<img
+								src="assets/img/social_icons/instagram.svg"
+								alt="Instagram logo" />
+						</a>
+					</div>
 				</div>
 			</div>
 		</nav>
+
 		<main>
 			<h1>Let&rsquo;s talk!</h1>
 			<section>
