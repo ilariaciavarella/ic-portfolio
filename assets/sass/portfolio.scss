@@ -3,3 +3,52 @@
 @use "components";
 @use "reusable";
 @use "sass:math";
+
+body {
+	min-height: 100vh;
+}
+
+main {
+	width: 100vw;
+	text-align: center;
+	padding: 40px 2.8rem;
+
+	h1 {
+		margin-bottom: 20px;
+	}
+
+	.links {
+		width: 100%;
+		display: flex;
+		gap: 2.8rem;
+		justify-content: center;
+		align-items: center;
+		margin: 80px 0;
+	}
+}
+
+@media only screen and (max-width: 319px) {
+	.links {
+		span {
+			display: none;
+		}
+
+		a {
+			width: fit-content;
+		}
+	}
+}
+
+@media only screen and (max-width: 663px) {
+	.links {
+		flex-direction: column;
+	}
+}
+
+@media only screen and (min-width: 664px) {
+	body {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}

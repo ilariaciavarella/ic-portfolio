@@ -229,14 +229,29 @@ nav #close-btn {
   align-items: center;
 }
 .icon:hover svg path {
-  stroke: #a00d31;
+  stroke: #228582;
 }
 .icon:active {
-  border: 1px solid #2fb6b2;
+  border: 1px solid #d91143;
   margin-right: -5px;
 }
 .icon:active svg path {
-  stroke: #d91143;
+  stroke: #2fb6b2;
+}
+
+.icon-text {
+  margin: 0;
+  max-width: 440px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16px;
+  gap: 1rem;
+  text-align: start;
+  overflow-x: hidden;
+}
+.icon-text img {
+  width: 40px;
 }
 
 /* ---------------------------------------------------------- */
@@ -256,7 +271,7 @@ footer .social a {
   padding: 4px 4px 0 4px;
 }
 footer .social a:hover svg path {
-  fill: #a00d31;
+  fill: #228582;
 }
 footer .social a:active svg path {
   fill: #1c1719;

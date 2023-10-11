@@ -160,7 +160,7 @@ nav #close-btn {
     color: #d91143;
   }
   .nav-link:active::after {
-    background-color: #2fb6b2;
+    background-color: #d91143;
   }
 }
 /* ---------------------------------------------------------- */
@@ -229,20 +229,35 @@ nav #close-btn {
   align-items: center;
 }
 .icon:hover svg path {
-  stroke: #a00d31;
+  stroke: #228582;
 }
 .icon:active {
-  border: 1px solid #2fb6b2;
+  border: 1px solid #d91143;
   margin-right: -5px;
 }
 .icon:active svg path {
   stroke: #2fb6b2;
 }
 
+.icon-text {
+  margin: 0;
+  max-width: 440px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16px;
+  gap: 1rem;
+  text-align: start;
+  overflow-x: hidden;
+}
+.icon-text img {
+  width: 40px;
+}
+
 /* ---------------------------------------------------------- */
 /* FOOTER */
 footer {
-  background-color: #2fb6b2;
+  background-color: #d91143;
   min-height: 140px;
   text-align: center;
   border-top: 1px solid #1c1719;
