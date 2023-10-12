@@ -5,11 +5,66 @@
 @use "sass:math";
 @use "form";
 
-@media only screen and (max-width: 1023px) {
+h1 {
+	margin: 40px 0;
+	margin-left: 1.2rem;
 }
 
-@media only screen and (min-width: 1024px) {
+section {
+	padding: 40px 2.5rem;
+
+	h2 {
+		text-align: center;
+		margin-bottom: 48px;
+	}
+}
+
+.contact-methods {
+	border-top: 1px solid var.$darkgrey;
+	display: flex;
+	min-height: calc(100vh - 80px);
+}
+
+.form-container {
+	background-color: var.$red;
+	color: white;
+	padding: 40px 2.5rem;
+}
+
+.social-links {
+	a {
+		margin: 32px auto;
+	}
+}
+
+.only-cta {
+	background-color: var.$blue;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+	.contact-methods {
+		flex-direction: column;
+	}
+
+	.form-container {
+		border-bottom: 1px solid var.$darkgrey;
+	}
+}
+
+@media only screen and (min-width: 768px) {
 	h1 {
 		text-align: center;
+	}
+
+	section {
+		width: 50%;
+	}
+
+	.form-container {
+		border-right: 1px solid var.$darkgrey;
 	}
 }

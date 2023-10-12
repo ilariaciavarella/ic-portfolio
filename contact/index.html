@@ -141,59 +141,75 @@
 
 		<main>
 			<h1>Let&rsquo;s talk!</h1>
-			<section class="form">
-				<h2>Write me a message</h2>
-				<form action="" method="get" id="contact-form">
-					<input type="hidden" name="contact_number" />
-					<label for="user-name">Full name</label>
-					<input
-						id="user-name"
-						type="text"
-						name="user-name"
-						placeholder="Victoria Smith"
-						required />
-					<label for="user-email">Email</label>
-					<input
-						id="user-email"
-						type="email"
-						name="user-email"
-						placeholder="v.smith@gmail.com"
-						required />
-					<label for="message">Your message</label>
-					<textarea
-						id="message"
-						name="message"
-						cols="30"
-						rows="10"
-						placeholder="Hi Ilaria!"
-						required></textarea>
-
-					<button type="submit" value="Send" class="btn primary-blue">
-						Send
-					</button>
-				</form>
-			</section>
-			<section>
-				<h2>Or connect with me</h2>
-				<a href="www.linkedin.com/in/ilaria-ciavarella" class="btn icon-text">
-					<img
-						src="../assets/img/social_icons/linkedin.svg"
-						alt="LinkedIn logo" />
-					<span>LinkedIn: <strong>Ilaria Ciavarella</strong></span>
-				</a>
-				<a href="https://github.com/ilariaciavarella" class="btn icon-text">
-					<img src="../assets/img/social_icons/github.svg" alt="GitHub logo" />
-					<span>GitHub: <strong>@ilariaciavarella</strong></span>
-				</a>
-				<a
-					href="https://www.instagram.com/lil.ciavarella/"
-					class="btn icon-text">
-					<img
-						src="../assets/img/social_icons/instagram.svg"
-						alt="Instagram logo" />
-					<span>Instagram: <strong>@lil.ciavarella</strong></span>
-				</a>
-			</section>
+			<div class="contact-methods">
+				<section class="form-container">
+					<h2>Write me a message</h2>
+					<form action="" method="get" id="contact-form">
+						<input type="hidden" name="contact_number" />
+						<div class="question">
+							<label for="user-name">Full name</label>
+							<input
+								id="user-name"
+								type="text"
+								name="user-name"
+								placeholder="Victoria Smith"
+								required />
+						</div>
+						<div class="question">
+							<label for="user-email">Email</label>
+							<input
+								id="user-email"
+								type="email"
+								name="user-email"
+								placeholder="v.smith@gmail.com"
+								required />
+						</div>
+						<div class="question">
+							<label for="message">Your message</label>
+							<textarea
+								id="message"
+								name="message"
+								cols="30"
+								rows="10"
+								placeholder="Hi Ilaria!"
+								required></textarea>
+						</div>
+						<button type="submit" value="Send" class="btn primary-blue">
+							Send
+						</button>
+					</form>
+				</section>
+				<section class="social-links">
+					<h2>Or connect with me</h2>
+					<a href="www.linkedin.com/in/ilaria-ciavarella" class="btn icon-text">
+						<img
+							src="../assets/img/social_icons/linkedin.svg"
+							alt="LinkedIn logo" />
+						<span>LinkedIn: <strong>Ilaria&nbsp;Ciavarella</strong></span>
+					</a>
+					<a href="https://github.com/ilariaciavarella" class="btn icon-text">
+						<img
+							src="../assets/img/social_icons/github.svg"
+							alt="GitHub logo" />
+						<span>GitHub: <strong>@ilariaciavarella</strong></span>
+					</a>
+					<a
+						href="https://www.instagram.com/lil.ciavarella/"
+						class="btn icon-text">
+						<img
+							src="../assets/img/social_icons/instagram.svg"
+							alt="Instagram logo" />
+						<span>Instagram: <strong>@lil.ciavarella</strong></span>
+					</a>
+				</section>
+			</div>
 		</main>
+
+		<footer class="only-cta">
+			<p>
+				<strong>Can&rsquo;t wait to work with you!</strong>
+				Don&rsquo;t&nbsp;hesitate to reach out to&nbsp;me
+			</p>
+		</footer>
 	</body>
 </html>

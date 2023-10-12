@@ -48,6 +48,13 @@ a {
   color: inherit;
 }
 
+label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.36rem;
+}
+
 /* NAV BAR */
 nav {
   height: 80px;
@@ -160,7 +167,7 @@ nav #close-btn {
     color: #d91143;
   }
   .nav-link:active::after {
-    background-color: #d91143;
+    background-color: #2fb6b2;
   }
 }
 /* ---------------------------------------------------------- */
@@ -236,7 +243,7 @@ nav #close-btn {
   margin-right: -5px;
 }
 .icon:active svg path {
-  stroke: #d91143;
+  stroke: #2fb6b2;
 }
 
 .icon-text {
@@ -263,7 +270,7 @@ nav #close-btn {
 /* ---------------------------------------------------------- */
 /* FOOTER */
 footer {
-  background-color: #d91143;
+  background-color: #2fb6b2;
   min-height: 140px;
   text-align: center;
   border-top: 1px solid #1c1719;
@@ -277,7 +284,7 @@ footer .social a {
   padding: 4px 4px 0 4px;
 }
 footer .social a:hover svg path {
-  fill: #a00d31;
+  fill: #228582;
 }
 footer .social a:active svg path {
   fill: #1c1719;

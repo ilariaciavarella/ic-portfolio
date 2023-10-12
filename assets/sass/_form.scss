@@ -3,3 +3,36 @@
 @use "components";
 @use "reusable";
 @use "sass:math";
+
+form {
+	max-width: 560px;
+	margin: auto;
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		width: 100%;
+		padding: 16px 24px;
+		border: 1px solid var.$darkgrey;
+		border-radius: 8px;
+		background-color: var.$lightgrey;
+		font-family: inherit;
+		font-size: inherit;
+	}
+
+	textarea {
+		resize: none;
+	}
+
+	label {
+		padding-left: 2px;
+		margin-bottom: 8px;
+	}
+}
+
+.question {
+	margin-bottom: 24px;
+
+	&:last-of-type {
+		margin-bottom: 40px;
+	}
+}
