@@ -167,7 +167,7 @@ nav #close-btn {
     color: #2fb6b2;
   }
   .nav-link:active::after {
-    background-color: #2fb6b2;
+    background-color: #d91143;
   }
 }
 /* ---------------------------------------------------------- */
@@ -236,14 +236,14 @@ nav #close-btn {
   align-items: center;
 }
 .icon:hover svg path {
-  stroke: #228582;
+  stroke: #a00d31;
 }
 .icon:active {
   border: 1px solid #d91143;
   margin-right: -5px;
 }
 .icon:active svg path {
-  stroke: #d91143;
+  stroke: #2fb6b2;
 }
 
 .icon-text {
@@ -284,7 +284,7 @@ footer .social a {
   padding: 4px 4px 0 4px;
 }
 footer .social a:hover svg path {
-  fill: #228582;
+  fill: #a00d31;
 }
 footer .social a:active svg path {
   fill: #1c1719;

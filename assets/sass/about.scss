@@ -4,49 +4,132 @@
 @use "reusable";
 @use "sass:math";
 
-section {
+.presentation {
+	width: 100vw;
+	display: flex;
 	border-bottom: 1px solid var.$darkgrey;
+
+	.text {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.greetings,
+	.about-me,
+	figure {
+		padding: 40px 2.5rem;
+	}
+
+	.about-me {
+		border-top: 1px solid var.$darkgrey;
+	}
+
+	.hobbies {
+		height: 80px;
+		width: 100%;
+		display: flex;
+		flex-wrap: nowrap;
+		overflow: scroll;
+		gap: 2.5rem;
+		align-items: center;
+		margin-top: -40px;
+		margin-bottom: 20px;
+
+		img {
+			width: 32px;
+		}
+	}
+
+	figure img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border: 1px solid var.$darkgrey;
+		border-radius: 2px;
+		opacity: 95%;
+	}
+}
+
+.work {
+	background-color: var.$darkgrey;
+	color: white;
+
+	h2 {
+		height: 120px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var.$blue;
+	}
+
+	#graphic {
+		background-color: var.$red;
+	}
+
+	.skills {
+		padding: 40px 1.2rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 0.8rem;
+		border-top: 1px solid var.$lightgrey;
+		border-bottom: 1px solid var.$lightgrey;
+
+		span {
+			text-align: center;
+			padding: 1rem 3.3rem;
+			border: 1px solid var.$lightgrey;
+			border-radius: 8px;
+		}
+
+		.software {
+			border-color: var.$red;
+		}
+	}
+
+	.schools {
+		text-align: center;
+		padding: 40px 1.2rem;
+
+		h4 {
+			margin-bottom: 40px;
+		}
+
+		img {
+			max-height: 86px;
+			width: auto;
+			max-width: 80%;
+		}
+	}
 }
 
 @media only screen and (max-width: 663px) {
 	.presentation {
-		padding: 40px 2.5rem;
+		flex-direction: column;
+
+		figure {
+			border-top: 1px solid var.$darkgrey;
+		}
 	}
 }
 
 @media only screen and (min-width: 664px) {
 	.presentation {
-		height: calc(100vh - 236px);
-		display: grid;
-		grid-template-columns: repeat(8, 1fr);
-		grid-template-rows: repeat(8, 1fr);
+		height: calc(100vh - 200px);
 
-		.greetings {
-			grid-column: 1 / 6;
-			grid-row: 1 / 3;
-			padding: 40px 2.5rem;
+		.text {
+			width: 65%;
 		}
 
 		.about-me {
-			grid-column: 1 / 6;
-			grid-row: 3 / 9;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 		}
 
 		figure {
-			grid-column: 6 / 9;
-			grid-row: 1 / -1;
-			display: flex;
-			align-items: center;
-			justify-content: center;
 			border-left: 1px solid var.$darkgrey;
-
-			img {
-				width: calc(100% - 5rem);
-				height: calc(100% - 80px);
-				object-fit: cover;
-				border: 1px solid var.$darkgrey;
-				border-radius: 2px;
-			}
 		}
 	}
 }
