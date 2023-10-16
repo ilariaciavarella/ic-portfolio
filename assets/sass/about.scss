@@ -55,11 +55,13 @@
 	color: white;
 
 	h2 {
+		text-align: center;
 		height: 120px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		background-color: var.$blue;
+		padding: 16px;
 	}
 
 	#graphic {
@@ -89,19 +91,33 @@
 	}
 
 	.schools {
+		width: 100%;
 		text-align: center;
 		padding: 40px 1.2rem;
 
 		h4 {
-			margin-bottom: 40px;
+			margin-bottom: 28px;
 		}
 
-		img {
-			max-height: 86px;
-			width: auto;
-			max-width: 80%;
+		.uni-logo {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 32px;
+
+			img {
+				height: 4rem;
+				width: auto;
+				max-width: 100%;
+				object-fit: contain;
+			}
 		}
 	}
+}
+
+footer {
+	border-top: 1px solid var.$lightgrey;
 }
 
 @media only screen and (max-width: 663px) {
