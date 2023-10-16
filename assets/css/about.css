@@ -239,11 +239,11 @@ nav #close-btn {
   stroke: #228582;
 }
 .icon:active {
-  border: 1px solid #d91143;
+  border: 1px solid #2fb6b2;
   margin-right: -5px;
 }
 .icon:active svg path {
-  stroke: #d91143;
+  stroke: #2fb6b2;
 }
 
 .icon-text {
@@ -270,7 +270,7 @@ nav #close-btn {
 /* ---------------------------------------------------------- */
 /* FOOTER */
 footer {
-  background-color: #d91143;
+  background-color: #2fb6b2;
   min-height: 140px;
   text-align: center;
   border-top: 1px solid #1c1719;
@@ -284,7 +284,7 @@ footer .social a {
   padding: 4px 4px 0 4px;
 }
 footer .social a:hover svg path {
-  fill: #228582;
+  fill: #a00d31;
 }
 footer .social a:active svg path {
   fill: #1c1719;
@@ -324,8 +324,8 @@ footer .social a:active svg path {
   }
 }
 .presentation {
-  width: 100vw;
-  display: flex;
+  min-height: calc(100vh - 200px);
+  width: 100%;
   border-bottom: 1px solid #1c1719;
 }
 .presentation .text {
@@ -334,28 +334,23 @@ footer .social a:active svg path {
 }
 .presentation .greetings,
 .presentation .about-me,
-.presentation figure {
+.presentation .portrait {
   padding: 40px 2.5rem;
 }
 .presentation .about-me {
   border-top: 1px solid #1c1719;
 }
 .presentation .hobbies {
-  height: 80px;
-  width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow: scroll;
-  gap: 2.5rem;
-  align-items: center;
   margin-top: -40px;
-  margin-bottom: 20px;
+  height: 5.7rem;
+  width: 100%;
+  overflow: hidden;
 }
 .presentation .hobbies img {
-  width: 32px;
+  height: 100%;
 }
-.presentation figure img {
-  width: 100%;
+.presentation .portrait img {
+  max-width: 100%;
   height: 100%;
   object-fit: cover;
   border: 1px solid #1c1719;
@@ -366,6 +361,8 @@ footer .social a:active svg path {
 .work {
   background-color: #1c1719;
   color: white;
+  display: flex;
+  flex-wrap: wrap;
 }
 .work h2 {
   text-align: center;
@@ -375,6 +372,7 @@ footer .social a:active svg path {
   justify-content: center;
   background-color: #2fb6b2;
   padding: 16px;
+  border-bottom: 1px solid #f0f5f5;
 }
 .work #graphic {
   background-color: #d91143;
@@ -384,10 +382,9 @@ footer .social a:active svg path {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  align-content: flex-start;
   gap: 0.8rem;
-  border-top: 1px solid #f0f5f5;
-  border-bottom: 1px solid #f0f5f5;
 }
 .work .skills span {
   text-align: center;
@@ -398,22 +395,26 @@ footer .social a:active svg path {
 .work .skills .software {
   border-color: #d91143;
 }
-.work .schools {
+
+.schools {
+  min-height: 240px;
+  background-color: #1c1719;
+  color: white;
   width: 100%;
   text-align: center;
   padding: 40px 1.2rem;
 }
-.work .schools h4 {
-  margin-bottom: 28px;
+.schools h3 {
+  margin-bottom: 32px;
 }
-.work .schools .uni-logo {
+.schools .uni-logo {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 32px;
 }
-.work .schools .uni-logo img {
+.schools .uni-logo img {
   height: 4rem;
   width: auto;
   max-width: 100%;
@@ -425,26 +426,48 @@ footer {
 }
 
 @media only screen and (max-width: 663px) {
-  .presentation {
-    flex-direction: column;
-  }
   .presentation figure {
     border-top: 1px solid #1c1719;
+  }
+  .portrait {
+    aspect-ratio: 1/1;
+  }
+  .portrait img {
+    width: 100%;
+    object-position: top;
+  }
+  .skills {
+    border-bottom: 1px solid #f0f5f5;
   }
 }
 @media only screen and (min-width: 664px) {
   .presentation {
-    height: calc(100vh - 200px);
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
   }
   .presentation .text {
-    width: 65%;
+    grid-column: 1/6;
   }
   .presentation .about-me {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  .presentation figure {
+  .presentation .portrait {
+    grid-column: 6/9;
     border-left: 1px solid #1c1719;
+  }
+  .work {
+    min-height: fit-content;
+    height: 100%;
+    border-bottom: 1px solid #f0f5f5;
+  }
+  .work .role {
+    width: 50%;
+    min-height: 100%;
+  }
+  .work .role:last-of-type {
+    border-left: 1px solid #f0f5f5;
   }
 }

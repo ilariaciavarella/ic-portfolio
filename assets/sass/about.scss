@@ -5,8 +5,8 @@
 @use "sass:math";
 
 .presentation {
-	width: 100vw;
-	display: flex;
+	min-height: calc(100vh - 200px);
+	width: 100%;
 	border-bottom: 1px solid var.$darkgrey;
 
 	.text {
@@ -16,7 +16,7 @@
 
 	.greetings,
 	.about-me,
-	figure {
+	.portrait {
 		padding: 40px 2.5rem;
 	}
 
@@ -25,23 +25,18 @@
 	}
 
 	.hobbies {
-		height: 80px;
-		width: 100%;
-		display: flex;
-		flex-wrap: nowrap;
-		overflow: scroll;
-		gap: 2.5rem;
-		align-items: center;
 		margin-top: -40px;
-		margin-bottom: 20px;
+		height: 5.7rem;
+		width: 100%;
+		overflow: hidden;
 
 		img {
-			width: 32px;
+			height: 100%;
 		}
 	}
 
-	figure img {
-		width: 100%;
+	.portrait img {
+		max-width: 100%;
 		height: 100%;
 		object-fit: cover;
 		border: 1px solid var.$darkgrey;
@@ -53,6 +48,8 @@
 .work {
 	background-color: var.$darkgrey;
 	color: white;
+	display: flex;
+	flex-wrap: wrap;
 
 	h2 {
 		text-align: center;
@@ -62,6 +59,7 @@
 		justify-content: center;
 		background-color: var.$blue;
 		padding: 16px;
+		border-bottom: 1px solid var.$lightgrey;
 	}
 
 	#graphic {
@@ -73,10 +71,9 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		align-items: center;
+		align-items: flex-start;
+		align-content: flex-start;
 		gap: 0.8rem;
-		border-top: 1px solid var.$lightgrey;
-		border-bottom: 1px solid var.$lightgrey;
 
 		span {
 			text-align: center;
@@ -89,29 +86,32 @@
 			border-color: var.$red;
 		}
 	}
+}
 
-	.schools {
+.schools {
+	min-height: 240px;
+	background-color: var.$darkgrey;
+	color: white;
+	width: 100%;
+	text-align: center;
+	padding: 40px 1.2rem;
+
+	h3 {
+		margin-bottom: 32px;
+	}
+
+	.uni-logo {
 		width: 100%;
-		text-align: center;
-		padding: 40px 1.2rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 32px;
 
-		h4 {
-			margin-bottom: 28px;
-		}
-
-		.uni-logo {
-			width: 100%;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			gap: 32px;
-
-			img {
-				height: 4rem;
-				width: auto;
-				max-width: 100%;
-				object-fit: contain;
-			}
+		img {
+			height: 4rem;
+			width: auto;
+			max-width: 100%;
+			object-fit: contain;
 		}
 	}
 }
@@ -121,31 +121,56 @@ footer {
 }
 
 @media only screen and (max-width: 663px) {
-	.presentation {
-		flex-direction: column;
+	.presentation figure {
+		border-top: 1px solid var.$darkgrey;
+	}
 
-		figure {
-			border-top: 1px solid var.$darkgrey;
+	.portrait {
+		aspect-ratio: 1 / 1;
+
+		img {
+			width: 100%;
+			object-position: top;
 		}
+	}
+
+	.skills {
+		border-bottom: 1px solid var.$lightgrey;
 	}
 }
 
 @media only screen and (min-width: 664px) {
 	.presentation {
-		height: calc(100vh - 200px);
+		display: grid;
+		grid-template-columns: repeat(8, 1fr);
 
 		.text {
-			width: 65%;
+			grid-column: 1 / 6;
 		}
 
 		.about-me {
+			height: 100%;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
 		}
 
-		figure {
+		.portrait {
+			grid-column: 6 / 9;
 			border-left: 1px solid var.$darkgrey;
+		}
+	}
+
+	.work {
+		min-height: fit-content;
+		height: 100%;
+		border-bottom: 1px solid var.$lightgrey;
+		.role {
+			width: 50%;
+			min-height: 100%;
+			&:last-of-type {
+				border-left: 1px solid var.$lightgrey;
+			}
 		}
 	}
 }
