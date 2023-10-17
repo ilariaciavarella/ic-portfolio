@@ -76,7 +76,7 @@ nav #close-btn {
   display: none;
 }
 
-@media screen and (max-width: 663px) {
+@media screen and (max-width: 600px) {
   .full-nav {
     display: none;
   }
@@ -127,7 +127,7 @@ nav #close-btn {
     border-bottom: 1px solid #f0f5f5;
   }
 }
-@media only screen and (min-width: 664px) {
+@media only screen and (min-width: 601px) {
   #menu-btn,
   #mobile-menu {
     display: none;
@@ -243,7 +243,7 @@ nav #close-btn {
   margin-right: -5px;
 }
 .icon:active svg path {
-  stroke: #d91143;
+  stroke: #2fb6b2;
 }
 
 .icon-text {
@@ -270,7 +270,7 @@ nav #close-btn {
 /* ---------------------------------------------------------- */
 /* FOOTER */
 footer {
-  background-color: #d91143;
+  background-color: #2fb6b2;
   min-height: 140px;
   text-align: center;
   border-top: 1px solid #1c1719;
@@ -290,7 +290,7 @@ footer .social a:active svg path {
   fill: #1c1719;
 }
 
-@media screen and (max-width: 572px) {
+@media screen and (max-width: 600px) {
   footer {
     color: white;
     padding: 0 2.5rem;
@@ -299,7 +299,7 @@ footer .social a:active svg path {
     padding-bottom: 0;
   }
 }
-@media only screen and (min-width: 573px) {
+@media only screen and (min-width: 601px) {
   footer {
     display: flex;
   }
@@ -332,7 +332,9 @@ footer .social a:active svg path {
   cursor: pointer;
   transition: 300ms ease-in-out;
   overflow: hidden;
+  min-width: 236px;
   max-width: 100%;
+  min-height: 100%;
   background-color: #f0f5f5;
 }
 .card img {
@@ -368,6 +370,23 @@ footer .social a:active svg path {
   .card img {
     filter: grayscale(100%);
     transition: 300ms ease-in-out;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 860px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  .card img {
+    border-bottom: none;
+    border-right: 1px solid #1c1719;
+    aspect-ratio: none;
+    height: 100%;
+  }
+  .card .caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 form {
@@ -415,7 +434,16 @@ section h1 {
 }
 
 .projects h1 {
-  color: #2fb6b2;
+  color: #d91143;
+}
+.projects .card-block {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.projects .card {
+  flex: 1;
 }
 
 .contact {
@@ -430,4 +458,16 @@ section h1 {
 .contact #contact-form {
   margin: 0;
   width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-block {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 860px) {
+  .card-block {
+    flex-direction: column;
+    padding: 0 80px;
+  }
 }

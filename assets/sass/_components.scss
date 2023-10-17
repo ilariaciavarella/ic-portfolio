@@ -28,7 +28,7 @@ nav {
 	}
 }
 
-@media screen and (max-width: 663px) {
+@media screen and (max-width: 600px) {
 	.full-nav {
 		display: none;
 	}
@@ -87,7 +87,7 @@ nav {
 	}
 }
 
-@media only screen and (min-width: 664px) {
+@media only screen and (min-width: 601px) {
 	#menu-btn,
 	#mobile-menu {
 		display: none;
@@ -279,7 +279,7 @@ footer {
 	}
 }
 
-@media screen and (max-width: 572px) {
+@media screen and (max-width: 600px) {
 	footer {
 		color: white;
 		padding: 0 2.5rem;
@@ -290,7 +290,7 @@ footer {
 	}
 }
 
-@media only screen and (min-width: 573px) {
+@media only screen and (min-width: 601px) {
 	footer {
 		display: flex;
 		div {
@@ -322,7 +322,9 @@ footer {
 	@include reusable.clickable;
 	@include reusable.click-start;
 	overflow: hidden;
+	min-width: 236px;
 	max-width: 100%;
+	min-height: 100%;
 	background-color: var.$lightgrey;
 
 	img {
@@ -365,6 +367,26 @@ footer {
 		img {
 			filter: grayscale(100%);
 			transition: 300ms ease-in-out;
+		}
+	}
+}
+
+@media only screen and (min-width: 601px) and (max-width: 860px) {
+	.card {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+
+		img {
+			border-bottom: none;
+			border-right: 1px solid var.$darkgrey;
+			aspect-ratio: none;
+			height: 100%;
+		}
+
+		.caption {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 		}
 	}
 }
