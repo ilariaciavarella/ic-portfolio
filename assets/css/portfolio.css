@@ -164,10 +164,10 @@ nav #close-btn {
     transform: scaleX(1);
   }
   .nav-link:active {
-    color: #2fb6b2;
+    color: #d91143;
   }
   .nav-link:active::after {
-    background-color: #d91143;
+    background-color: #2fb6b2;
   }
 }
 /* ---------------------------------------------------------- */
@@ -236,7 +236,7 @@ nav #close-btn {
   align-items: center;
 }
 .icon:hover svg path {
-  stroke: #228582;
+  stroke: #a00d31;
 }
 .icon:active {
   border: 1px solid #d91143;

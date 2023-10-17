@@ -164,7 +164,7 @@ nav #close-btn {
     transform: scaleX(1);
   }
   .nav-link:active {
-    color: #d91143;
+    color: #2fb6b2;
   }
   .nav-link:active::after {
     background-color: #d91143;
@@ -243,7 +243,7 @@ nav #close-btn {
   margin-right: -5px;
 }
 .icon:active svg path {
-  stroke: #2fb6b2;
+  stroke: #d91143;
 }
 
 .icon-text {
@@ -324,13 +324,12 @@ footer .social a:active svg path {
   }
 }
 .presentation {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: min-content;
   min-height: calc(100vh - 200px);
   width: 100%;
   border-bottom: 1px solid #1c1719;
-}
-.presentation .text {
-  display: flex;
-  flex-direction: column;
 }
 .presentation .greetings,
 .presentation .about-me,
@@ -342,12 +341,14 @@ footer .social a:active svg path {
 }
 .presentation .hobbies {
   margin-top: -40px;
-  height: 5.7rem;
+  height: 5rem;
   width: 100%;
   overflow: hidden;
 }
 .presentation .hobbies img {
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .presentation .portrait img {
   max-width: 100%;
@@ -425,7 +426,11 @@ footer {
   border-top: 1px solid #f0f5f5;
 }
 
-@media only screen and (max-width: 663px) {
+/* SMALL */
+@media only screen and (max-width: 600px) {
+  .presentation {
+    display: block;
+  }
   .presentation figure {
     border-top: 1px solid #1c1719;
   }
@@ -440,22 +445,27 @@ footer {
     border-bottom: 1px solid #f0f5f5;
   }
 }
-@media only screen and (min-width: 664px) {
-  .presentation {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-  }
-  .presentation .text {
+/* MEDIUM */
+@media only screen and (min-width: 601px) and (max-width: 860px) {
+  .greetings {
     grid-column: 1/6;
   }
-  .presentation .about-me {
-    height: 100%;
+  .about-me {
+    grid-column: 1/9;
+  }
+  .portrait {
+    grid-row: 1/2;
+    grid-column: 6/9;
+  }
+}
+/* FROM MEDIUM ON */
+@media only screen and (min-width: 601px) {
+  .about-me {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  .presentation .portrait {
-    grid-column: 6/9;
+  .portrait {
     border-left: 1px solid #1c1719;
   }
   .work {
@@ -469,5 +479,16 @@ footer {
   }
   .work .role:last-of-type {
     border-left: 1px solid #f0f5f5;
+  }
+}
+/* LARGE */
+@media only screen and (min-width: 861px) {
+  .greetings,
+  .about-me {
+    grid-column: 1/6;
+  }
+  .portrait {
+    grid-column: 6/9;
+    grid-row: 1/3;
   }
 }
