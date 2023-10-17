@@ -164,7 +164,7 @@ nav #close-btn {
     transform: scaleX(1);
   }
   .nav-link:active {
-    color: #d91143;
+    color: #2fb6b2;
   }
   .nav-link:active::after {
     background-color: #d91143;
@@ -239,7 +239,7 @@ nav #close-btn {
   stroke: #a00d31;
 }
 .icon:active {
-  border: 1px solid #d91143;
+  border: 1px solid #2fb6b2;
   margin-right: -5px;
 }
 .icon:active svg path {
@@ -270,7 +270,7 @@ nav #close-btn {
 /* ---------------------------------------------------------- */
 /* FOOTER */
 footer {
-  background-color: #2fb6b2;
+  background-color: #d91143;
   min-height: 140px;
   text-align: center;
   border-top: 1px solid #1c1719;
@@ -325,7 +325,7 @@ footer .social a:active svg path {
 }
 form {
   max-width: 560px;
-  margin: auto;
+  margin: 0 auto;
 }
 form input[type=text],
 form input[type=email],

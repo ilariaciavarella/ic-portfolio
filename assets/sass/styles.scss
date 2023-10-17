@@ -10,8 +10,28 @@ main img {
 	display: none;
 }
 
-@media only screen and (max-width: 663px) {
+section {
+	min-height: calc(100vh - 80px);
+	padding: 40px 2.5rem;
+	border-bottom: 1px solid var.$darkgrey;
+
+	h1 {
+		text-align: center;
+		margin-bottom: 40px;
+	}
 }
 
-@media only screen and (min-width: 664px) {
+.contact {
+	background-color: var.$blue;
+	color: white;
+	border: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+
+	#contact-form {
+		margin: 0;
+		width: 100%;
+	}
 }
