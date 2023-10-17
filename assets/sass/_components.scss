@@ -315,3 +315,56 @@ footer {
 		}
 	}
 }
+
+/* ---------------------------------------------------------- */
+/* CARDS */
+.card {
+	@include reusable.clickable;
+	@include reusable.click-start;
+	overflow: hidden;
+	max-width: 100%;
+	background-color: var.$lightgrey;
+
+	img {
+		opacity: 90%;
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		border-bottom: 1px solid var.$darkgrey;
+		@include reusable.img-opacity;
+	}
+
+	.caption {
+		padding: 20px 1.4rem;
+	}
+
+	h4 {
+		margin-bottom: 0.8rem;
+	}
+
+	&:hover {
+		background-color: reusable.hover-col(var.$lightgrey);
+
+		img {
+			filter: none;
+		}
+	}
+
+	&:active {
+		@include reusable.click-end;
+		background-color: reusable.active-col(var.$lightgrey);
+
+		img {
+			filter: brightness(50%);
+		}
+	}
+}
+
+@media only screen and (hover: hover) {
+	.card {
+		img {
+			filter: grayscale(100%);
+			transition: 300ms ease-in-out;
+		}
+	}
+}

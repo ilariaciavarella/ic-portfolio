@@ -236,14 +236,14 @@ nav #close-btn {
   align-items: center;
 }
 .icon:hover svg path {
-  stroke: #a00d31;
+  stroke: #228582;
 }
 .icon:active {
-  border: 1px solid #2fb6b2;
+  border: 1px solid #d91143;
   margin-right: -5px;
 }
 .icon:active svg path {
-  stroke: #2fb6b2;
+  stroke: #d91143;
 }
 
 .icon-text {
@@ -270,7 +270,7 @@ nav #close-btn {
 /* ---------------------------------------------------------- */
 /* FOOTER */
 footer {
-  background-color: #2fb6b2;
+  background-color: #d91143;
   min-height: 140px;
   text-align: center;
   border-top: 1px solid #1c1719;
@@ -323,6 +323,53 @@ footer .social a:active svg path {
     flex: 1 1 10%;
   }
 }
+/* ---------------------------------------------------------- */
+/* CARDS */
+.card {
+  border: 1px solid #1c1719;
+  box-shadow: #1c1719 8px 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+  overflow: hidden;
+  max-width: 100%;
+  background-color: #f0f5f5;
+}
+.card img {
+  opacity: 90%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-bottom: 1px solid #1c1719;
+  opacity: 95%;
+}
+.card .caption {
+  padding: 20px 1.4rem;
+}
+.card h4 {
+  margin-bottom: 0.8rem;
+}
+.card:hover {
+  background-color: #cbdddd;
+}
+.card:hover img {
+  filter: none;
+}
+.card:active {
+  box-shadow: none;
+  transform: translate(8px, 8px);
+  background-color: #a4c2c2;
+}
+.card:active img {
+  filter: brightness(50%);
+}
+
+@media only screen and (hover: hover) {
+  .card img {
+    filter: grayscale(100%);
+    transition: 300ms ease-in-out;
+  }
+}
 form {
   max-width: 560px;
   margin: 0 auto;
@@ -353,8 +400,8 @@ form label {
   margin-bottom: 40px;
 }
 
-main img {
-  display: none;
+.intro img {
+  height: 40px;
 }
 
 section {
@@ -365,6 +412,10 @@ section {
 section h1 {
   text-align: center;
   margin-bottom: 40px;
+}
+
+.projects h1 {
+  color: #2fb6b2;
 }
 
 .contact {

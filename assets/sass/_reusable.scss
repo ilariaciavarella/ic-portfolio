@@ -25,6 +25,10 @@
 	border-radius: 2px;
 }
 
+@mixin img-opacity {
+	opacity: 95%;
+}
+
 //FUNCTIONS
 //Hover colour
 @function hover-col($bg) {

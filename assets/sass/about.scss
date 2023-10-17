@@ -41,7 +41,7 @@
 		object-fit: cover;
 		border: 1px solid var.$darkgrey;
 		border-radius: 2px;
-		opacity: 95%;
+		@include reusable.img-opacity;
 	}
 }
 
