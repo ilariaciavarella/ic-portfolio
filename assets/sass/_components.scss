@@ -365,7 +365,7 @@ footer {
 @media only screen and (hover: hover) {
 	.card {
 		img {
-			filter: grayscale(100%);
+			filter: grayscale(100%) brightness(80%);
 			transition: 300ms ease-in-out;
 		}
 	}

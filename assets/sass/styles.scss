@@ -6,18 +6,54 @@
 @use "sass:math";
 @use "form";
 
-.intro img {
-	height: 40px;
-}
-
 section {
 	min-height: calc(100vh - 80px);
+	width: 100%;
 	padding: 40px 2.5rem;
 	border-bottom: 1px solid var.$darkgrey;
 
 	h1 {
 		text-align: center;
 		margin-bottom: 40px;
+	}
+}
+
+.intro {
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+
+	h1 {
+		text-align: start;
+		margin-bottom: 0;
+	}
+
+	#greetings {
+		padding: 40px 2.5rem;
+		border-bottom: 1px solid var.$darkgrey;
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	h2 {
+		text-align: center;
+		padding: 32px 2.5rem;
+	}
+
+	.portrait {
+		padding: 40px 2.5rem;
+
+		img {
+			max-width: 100%;
+			height: 100%;
+			aspect-ratio: 1 / 1;
+			object-fit: cover;
+			object-position: top;
+			@include reusable.img-style;
+			@include reusable.img-opacity;
+		}
 	}
 }
 
@@ -44,7 +80,7 @@ section {
 	border: none;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
 
 	#contact-form {
@@ -53,18 +89,72 @@ section {
 	}
 }
 
+/* SMALL */
 @media only screen and (max-width: 600px) {
+	.jobs {
+		border-bottom: 1px solid var.$darkgrey;
+	}
+
+	.portrait img {
+		aspect-ratio: 1 / 1;
+	}
+
 	.card-block {
 		flex-direction: column;
 	}
 }
 
+/* MEDIUM */
 @media only screen and (min-width: 601px) and (max-width: 860px) {
 	.card-block {
 		flex-direction: column;
-		padding: 0 80px;
+		padding: 0 60px;
 	}
 }
 
-@media only screen and (min-width: 861px) {
+/* FROM MEDIUM ON */
+@media only screen and (min-width: 601px) {
+	.intro {
+		#descr {
+			flex-grow: 2;
+			height: 100%;
+			display: grid;
+			grid-template-columns: repeat(10, 1fr);
+
+			#design {
+				grid-column: 1 / 4;
+			}
+
+			.jobs {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			#develop {
+				grid-column: -1 / -4;
+			}
+
+			.portrait {
+				grid-column: 4 / 8;
+				grid-row: 1 / 2;
+				border-left: 1px solid var.$darkgrey;
+				border-right: 1px solid var.$darkgrey;
+			}
+		}
+	}
+
+	.projects {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
+
+/* MEDIUM TO LARGE */
+@media only screen and (min-width: 601px) and (max-width: 1100px) {
+	#descr h2 {
+		transform: rotate(-90deg);
+		height: min-content;
+	}
 }

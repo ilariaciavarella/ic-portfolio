@@ -164,7 +164,7 @@ nav #close-btn {
     transform: scaleX(1);
   }
   .nav-link:active {
-    color: #2fb6b2;
+    color: #d91143;
   }
   .nav-link:active::after {
     background-color: #d91143;
@@ -243,7 +243,7 @@ nav #close-btn {
   margin-right: -5px;
 }
 .icon:active svg path {
-  stroke: #d91143;
+  stroke: #2fb6b2;
 }
 
 .icon-text {
@@ -368,7 +368,7 @@ footer .social a:active svg path {
 
 @media only screen and (hover: hover) {
   .card img {
-    filter: grayscale(100%);
+    filter: grayscale(100%) brightness(80%);
     transition: 300ms ease-in-out;
   }
 }
