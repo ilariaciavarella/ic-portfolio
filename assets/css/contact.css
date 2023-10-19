@@ -105,23 +105,31 @@ nav #close-btn {
     transition: height 300ms ease-in-out;
     color: white;
   }
-  #mobile-menu #menu-content img {
-    filter: invert(100%);
-    width: 40px;
+  #mobile-menu #menu-content #nav-social a {
     margin: 0 12px;
+  }
+  #mobile-menu #menu-content #nav-social a:hover svg path {
+    fill: #228582;
+  }
+  #mobile-menu #menu-content #nav-social a:active svg path {
+    fill: #2fb6b2;
   }
   #mobile-menu .mobile-nav {
     list-style-type: none;
-    width: 100vw;
+    width: 100%;
   }
   #mobile-menu .mobile-nav a {
     display: block;
-    padding: 36px;
+    padding: 40px;
     text-align: center;
     border-top: 1px solid #f0f5f5;
+    transition: 300ms ease-in-out;
+  }
+  #mobile-menu .mobile-nav a:hover {
+    background-color: rgba(217, 17, 67, 0.25);
   }
   #mobile-menu .mobile-nav a:active {
-    background-color: rgba(217, 17, 67, 0.25);
+    background-color: rgba(217, 17, 67, 0.5);
   }
   #mobile-menu .mobile-nav li:last-of-type a {
     border-bottom: 1px solid #f0f5f5;
@@ -164,10 +172,10 @@ nav #close-btn {
     transform: scaleX(1);
   }
   .nav-link:active {
-    color: #d91143;
+    color: #2fb6b2;
   }
   .nav-link:active::after {
-    background-color: #2fb6b2;
+    background-color: #d91143;
   }
 }
 /* ---------------------------------------------------------- */
@@ -239,11 +247,11 @@ nav #close-btn {
   stroke: #228582;
 }
 .icon:active {
-  border: 1px solid #2fb6b2;
-  margin-right: -5px;
+  border: 2px solid #2fb6b2;
+  margin-right: -6px;
 }
 .icon:active svg path {
-  stroke: #d91143;
+  stroke: #2fb6b2;
 }
 
 .icon-text {
@@ -270,7 +278,7 @@ nav #close-btn {
 /* ---------------------------------------------------------- */
 /* FOOTER */
 footer {
-  background-color: #2fb6b2;
+  background-color: #d91143;
   min-height: 140px;
   text-align: center;
   border-top: 1px solid #1c1719;
@@ -283,11 +291,16 @@ footer .social a {
   margin: 0 4px;
   padding: 4px 4px 0 4px;
 }
-footer .social a:hover svg path {
-  fill: #a00d31;
+footer .social a img {
+  width: 40px;
+  filter: invert(100%);
 }
-footer .social a:active svg path {
-  fill: #1c1719;
+footer .social a:hover img {
+  filter: invert(50%);
+  mix-blend-mode: multiply;
+}
+footer .social a:active img {
+  filter: invert(0);
 }
 
 @media screen and (max-width: 600px) {

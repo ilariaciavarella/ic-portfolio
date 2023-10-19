@@ -59,24 +59,39 @@ nav {
 			transition: height 300ms ease-in-out;
 			color: white;
 
-			img {
-				filter: invert(100%);
-				width: 40px;
+			#nav-social a {
 				margin: 0 12px;
+
+				&:hover {
+					svg path {
+						fill: reusable.hover-col(var.$blue);
+					}
+				}
+
+				&:active {
+					svg path {
+						fill: var.$blue;
+					}
+				}
 			}
 		}
 
 		.mobile-nav {
 			list-style-type: none;
-			width: 100vw;
+			width: 100%;
 			a {
 				display: block;
-				padding: 36px;
+				padding: 40px;
 				text-align: center;
 				border-top: 1px solid var.$lightgrey;
+				transition: 300ms ease-in-out;
+
+				&:hover {
+					background-color: transparentize(var.$red, 0.75);
+				}
 
 				&:active {
-					background-color: transparentize(var.$red, 0.75);
+					background-color: transparentize(var.$red, 0.5);
 				}
 			}
 
@@ -210,16 +225,16 @@ nav {
 
 	&:hover {
 		svg path {
-			stroke: reusable.hover-col(reusable.random-col());
+			stroke: reusable.hover-col(var.$blue);
 		}
 	}
 
 	&:active {
 		svg path {
-			stroke: reusable.random-col();
+			stroke: var.$blue;
 		}
-		border: 1px solid reusable.random-col();
-		margin-right: -5px;
+		border: 2px solid var.$blue;
+		margin-right: -6px;
 	}
 }
 
@@ -265,15 +280,21 @@ footer {
 		margin: 0 4px;
 		padding: 4px 4px 0 4px;
 
+		img {
+			width: 40px;
+			filter: invert(100%);
+		}
+
 		&:hover {
-			svg path {
-				fill: reusable.hover-col(reusable.random-col());
+			img {
+				filter: invert(50%);
+				mix-blend-mode: multiply;
 			}
 		}
 
 		&:active {
-			svg path {
-				fill: var.$darkgrey;
+			img {
+				filter: invert(0);
 			}
 		}
 	}
