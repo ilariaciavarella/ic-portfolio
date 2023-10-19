@@ -10,7 +10,7 @@
 }
 
 @mixin click-start {
-	cursor: pointer;
+	cursor: url(../img/cursors/pointer.svg), pointer;
 	transition: 300ms ease-in-out;
 }
 

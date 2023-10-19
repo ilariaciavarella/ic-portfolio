@@ -1,6 +1,13 @@
 :root {
   font-family: "Hack", monospace;
   font-size: calc(13px + 0.390625vw);
+  /* hide scrollbar */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 /* Reset default */
@@ -12,6 +19,7 @@
 
 body {
   background-color: #f0f5f5;
+  cursor: url(../img/cursors/cursor.svg), auto;
 }
 
 /* Text default styles */
@@ -46,6 +54,7 @@ h4 {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: url(../img/cursors/pointer.svg), pointer;
 }
 
 label {
@@ -53,6 +62,12 @@ label {
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 0.36rem;
+}
+
+input,
+label,
+textarea {
+  cursor: url(../img/cursors/text.svg), text;
 }
 
 /* NAV BAR */
@@ -172,7 +187,7 @@ nav #close-btn {
     transform: scaleX(1);
   }
   .nav-link:active {
-    color: #d91143;
+    color: #2fb6b2;
   }
   .nav-link:active::after {
     background-color: #d91143;
@@ -184,7 +199,7 @@ nav #close-btn {
   border: 1px solid #1c1719;
   box-shadow: #1c1719 8px 8px 0;
   border-radius: 8px;
-  cursor: pointer;
+  cursor: url(../img/cursors/pointer.svg), pointer;
   transition: 300ms ease-in-out;
   padding: 16px;
   display: block;
@@ -234,7 +249,7 @@ nav #close-btn {
 }
 
 .icon {
-  cursor: pointer;
+  cursor: url(../img/cursors/pointer.svg), pointer;
   padding: 4px;
   margin-right: -4px;
   border-radius: 8px;
@@ -342,7 +357,7 @@ footer .social a:active img {
   border: 1px solid #1c1719;
   box-shadow: #1c1719 8px 8px 0;
   border-radius: 8px;
-  cursor: pointer;
+  cursor: url(../img/cursors/pointer.svg), pointer;
   transition: 300ms ease-in-out;
   overflow: hidden;
   min-width: 236px;
@@ -417,7 +432,7 @@ main h1 {
 main .links {
   width: 100%;
   display: flex;
-  gap: 2.8rem;
+  column-gap: 2.8rem;
   justify-content: center;
   align-items: center;
   margin: 80px 0;

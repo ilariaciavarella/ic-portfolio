@@ -1,8 +1,17 @@
 @use "var";
+@use "reusable";
 
 :root {
 	font-family: "Hack", monospace;
 	font-size: calc(13px + 0.390625vw);
+
+	/* hide scrollbar */
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+	display: none;
 }
 
 /* Reset default */
@@ -14,6 +23,7 @@
 
 body {
 	background-color: var.$lightgrey;
+	cursor: url(../img/cursors/cursor.svg), auto;
 }
 
 /* Text default styles */
@@ -48,6 +58,7 @@ h4 {
 a {
 	text-decoration: none;
 	color: inherit;
+	cursor: url(../img/cursors/pointer.svg), pointer;
 }
 
 label {
@@ -55,4 +66,10 @@ label {
 	font-size: 1rem;
 	font-weight: bold;
 	letter-spacing: 0.36rem;
+}
+
+input,
+label,
+textarea {
+	cursor: url(../img/cursors/text.svg), text;
 }
