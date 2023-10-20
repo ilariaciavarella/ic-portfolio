@@ -27,7 +27,6 @@ let closeMenu = function () {
 }
 
 window.addEventListener('resize', function () {
-    console.log("hey");
     if (windowWidth > 663) {
         menuBtn.style.removeProperty("display");
         mobileMenu.style.removeProperty("height");

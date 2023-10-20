@@ -7,7 +7,6 @@
 @use "form";
 
 section {
-	min-height: calc(100vh - 80px);
 	width: 100%;
 	padding: 40px 2.5rem;
 	border-bottom: 1px solid var.$darkgrey;
@@ -19,6 +18,7 @@ section {
 }
 
 .intro {
+	min-height: calc(100vh - 80px);
 	padding: 0;
 	display: flex;
 	flex-direction: column;
@@ -54,6 +54,11 @@ section {
 			@include reusable.img-style;
 			@include reusable.img-opacity;
 		}
+
+		#arty,
+		#glitchy {
+			display: none;
+		}
 	}
 }
 
@@ -78,13 +83,7 @@ section {
 	background-color: var.$blue;
 	color: white;
 	border: none;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
 	#contact-form {
-		margin: 0;
 		width: 100%;
 	}
 }
@@ -143,12 +142,6 @@ section {
 			}
 		}
 	}
-
-	.projects {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
 }
 
 /* MEDIUM TO LARGE */
@@ -157,4 +150,13 @@ section {
 		transform: rotate(-90deg);
 		height: min-content;
 	}
+}
+
+/* ONLY HOVER DEVICES */
+@media only screen and (hover: hover) {
+	/* #design:hover {
+		& ~ figure #arty {
+			display: initial;
+		}
+	} */
 }

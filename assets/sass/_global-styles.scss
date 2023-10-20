@@ -24,6 +24,7 @@
 body {
 	background-color: var.$lightgrey;
 	cursor: url(../img/cursors/cursor.svg), auto;
+	scroll-behavior: smooth;
 }
 
 /* Text default styles */

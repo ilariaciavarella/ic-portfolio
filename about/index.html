@@ -26,6 +26,7 @@
 			content="https://ilariaciavarella.github.io/personal-portfolio/about/" />
 		<meta property="og:image" content="" />
 	</head>
+
 	<body>
 		<nav id="nav">
 			<span class="logo"><a href="../">ILARIA CIAVARELLA</a></span>
@@ -142,8 +143,15 @@
 				<div class="about-me">
 					<div class="hobbies">
 						<img
-							src="../assets/img/about_icons/hobbies.gif"
-							alt="Carousel of icons" />
+							src="../assets/img/about_icons/hobbies_l.gif"
+							alt="Carousel of icons"
+							srcset="
+								../assets/img/about_icons/hobbies_l.gif 3768w,
+								../assets/img/about_icons/hobbies_m.gif 1884w,
+								../assets/img/about_icons/hobbies_s.gif  942w
+							"
+							sizes="(max-width: 600px) 942px, (max-width: 900px) 1884px,
+         3768px" />
 					</div>
 					<div class="story">
 						<p>
@@ -165,8 +173,15 @@
 				</div>
 				<figure class="portrait">
 					<img
-						src="../assets/img/portraits/portrait_colours.jpg"
-						alt="Ilaria's portrait on graduation day" />
+						src="../assets/img/portraits/portrait-colours_l.jpg"
+						alt="Ilaria's portrait on graduation day"
+						srcset="
+							../assets/img/portraits/portrait-colours_l.jpg 2250w,
+							../assets/img/portraits/portrait-colours_m.jpg 1350w,
+							../assets/img/portraits/portrait-colours_s.jpg  750w
+						"
+						sizes="(max-width: 300px) 750px, (max-width: 900px) 1350px,
+         2250px" />
 				</figure>
 			</section>
 
@@ -201,11 +216,21 @@
 				<h3>Education</h3>
 				<div class="uni-logo">
 					<img
-						src="../assets/img/universities_logo/ied_logo_w.png"
-						alt="IED white logo" />
+						src="../assets/img/universities_logo/ied_logo_l.png"
+						alt="IED white logo"
+						srcset="
+							../assets/img/universities_logo/ied_logo_l.png 517w,
+							../assets/img/universities_logo/ied_logo_s.png 260w
+						"
+						sizes="(max-width: 800px) 260px, 517px" />
 					<img
-						src="../assets/img/universities_logo/s2i_logo_w.png"
-						alt="start2impact white logo" />
+						src="../assets/img/universities_logo/s2i_logo_l.png"
+						alt="start2impact white logo"
+						srcset="
+							../assets/img/universities_logo/s2i_logo_l.png 900w,
+							../assets/img/universities_logo/s2i_logo_s.png 453w
+						"
+						sizes="(max-width: 800px) 453px, 900px" />
 				</div>
 			</section>
 		</main>

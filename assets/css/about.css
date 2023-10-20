@@ -20,6 +20,7 @@
 body {
   background-color: #f0f5f5;
   cursor: url(../img/cursors/cursor.svg), auto;
+  scroll-behavior: smooth;
 }
 
 /* Text default styles */
@@ -103,31 +104,8 @@ nav #close-btn {
     top: 80px;
     left: 0;
     background-color: #1c1719;
-    overflow-y: hidden;
+    overflow-y: scroll;
     transition: height 300ms ease-in-out;
-  }
-  #mobile-menu .spacing {
-    height: 1px;
-    content: "";
-  }
-  #mobile-menu #menu-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 40px 0;
-    transition: height 300ms ease-in-out;
-    color: white;
-  }
-  #mobile-menu #menu-content #nav-social a {
-    margin: 0 12px;
-  }
-  #mobile-menu #menu-content #nav-social a:hover svg path {
-    fill: #228582;
-  }
-  #mobile-menu #menu-content #nav-social a:active svg path {
-    fill: #2fb6b2;
   }
   #mobile-menu .mobile-nav {
     list-style-type: none;
@@ -148,6 +126,26 @@ nav #close-btn {
   }
   #mobile-menu .mobile-nav li:last-of-type a {
     border-bottom: 1px solid #f0f5f5;
+  }
+  #menu-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 0;
+    transition: height 300ms ease-in-out;
+    color: white;
+  }
+  #menu-content #nav-social a {
+    margin: 0 12px;
+  }
+  #menu-content #nav-social a:hover svg path {
+    fill: #228582;
+  }
+  #menu-content #nav-social a:active svg path {
+    fill: #2fb6b2;
   }
 }
 @media only screen and (min-width: 601px) {
@@ -190,7 +188,7 @@ nav #close-btn {
     color: #d91143;
   }
   .nav-link:active::after {
-    background-color: #d91143;
+    background-color: #2fb6b2;
   }
 }
 /* ---------------------------------------------------------- */
@@ -558,6 +556,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
   }
   .portrait {
     border-left: 1px solid #1c1719;
