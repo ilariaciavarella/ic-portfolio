@@ -188,7 +188,7 @@ nav #close-btn {
     color: #d91143;
   }
   .nav-link:active::after {
-    background-color: #2fb6b2;
+    background-color: #d91143;
   }
 }
 /* ---------------------------------------------------------- */
@@ -445,6 +445,38 @@ form label {
   margin-bottom: 40px;
 }
 
+/* ANIMATIONS */
+@keyframes name-colour {
+  0% {
+    color: black;
+  }
+  33% {
+    color: #d91143;
+  }
+  67% {
+    color: black;
+  }
+  100% {
+    color: #2fb6b2;
+  }
+}
+@keyframes design-glitter {
+  from {
+    background-color: none;
+  }
+  to {
+    background-color: rgba(217, 17, 67, 0.25);
+  }
+}
+@keyframes develop-glitter {
+  from {
+    background-color: none;
+  }
+  to {
+    background-color: rgba(47, 182, 178, 0.25);
+  }
+}
+/* ---------------------------------------------------------- */
 section {
   width: 100%;
   padding: 40px 2.5rem;
@@ -620,8 +652,11 @@ section h1 {
 }
 /* ONLY HOVER DEVICES */
 @media only screen and (hover: hover) {
+  #design {
+    animation: design-glitter 1s infinite alternate ease-in-out;
+  }
   #design:hover {
-    background-color: rgba(217, 17, 67, 0.25);
+    animation: none;
   }
   #design:hover ~ figure #arty {
     display: initial;
@@ -629,13 +664,22 @@ section h1 {
   #design:hover ~ figure #grayscale {
     display: none;
   }
+  #develop {
+    animation: develop-glitter 1s infinite alternate ease-in-out;
+  }
   #develop:hover {
-    background-color: rgba(47, 182, 178, 0.25);
+    animation: none;
   }
   #develop:hover ~ figure #glitchy {
     display: initial;
   }
   #develop:hover ~ figure #grayscale {
     display: none;
+  }
+}
+/* ONLY HOVER DEVICES */
+@media only screen and (hover: none) {
+  .intro h1 {
+    animation: name-colour 2s infinite alternate ease-in-out;
   }
 }

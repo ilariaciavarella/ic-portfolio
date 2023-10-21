@@ -6,6 +6,44 @@
 @use "sass:math";
 @use "form";
 
+/* ANIMATIONS */
+@keyframes name-colour {
+	0% {
+		color: black;
+	}
+
+	33% {
+		color: var.$red;
+	}
+
+	67% {
+		color: black;
+	}
+
+	100% {
+		color: var.$blue;
+	}
+}
+
+@keyframes design-glitter {
+	from {
+		background-color: none;
+	}
+	to {
+		background-color: transparentize(var.$red, 0.75);
+	}
+}
+
+@keyframes develop-glitter {
+	from {
+		background-color: none;
+	}
+	to {
+		background-color: transparentize(var.$blue, 0.75);
+	}
+}
+
+/* ---------------------------------------------------------- */
 section {
 	width: 100%;
 	padding: 40px 2.5rem;
@@ -209,25 +247,41 @@ section {
 
 /* ONLY HOVER DEVICES */
 @media only screen and (hover: hover) {
-	#design:hover {
-		background-color: transparentize(var.$red, 0.75);
-		& ~ figure #arty {
-			display: initial;
-		}
+	#design {
+		animation: design-glitter 1s infinite alternate ease-in-out;
 
-		& ~ figure #grayscale {
-			display: none;
+		&:hover {
+			animation: none;
+			& ~ figure #arty {
+				display: initial;
+			}
+
+			& ~ figure #grayscale {
+				display: none;
+			}
 		}
 	}
 
-	#develop:hover {
-		background-color: transparentize(var.$blue, 0.75);
-		& ~ figure #glitchy {
-			display: initial;
-		}
+	#develop {
+		animation: develop-glitter 1s infinite alternate ease-in-out;
 
-		& ~ figure #grayscale {
-			display: none;
+		&:hover {
+			animation: none;
+
+			& ~ figure #glitchy {
+				display: initial;
+			}
+
+			& ~ figure #grayscale {
+				display: none;
+			}
 		}
+	}
+}
+
+/* ONLY HOVER DEVICES */
+@media only screen and (hover: none) {
+	.intro h1 {
+		animation: name-colour 2s infinite alternate ease-in-out;
 	}
 }
