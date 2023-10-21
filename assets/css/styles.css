@@ -185,10 +185,10 @@ nav #close-btn {
     transform: scaleX(1);
   }
   .nav-link:active {
-    color: #2fb6b2;
+    color: #d91143;
   }
   .nav-link:active::after {
-    background-color: #d91143;
+    background-color: #2fb6b2;
   }
 }
 /* ---------------------------------------------------------- */
@@ -291,7 +291,7 @@ nav #close-btn {
 /* ---------------------------------------------------------- */
 /* FOOTER */
 footer {
-  background-color: #2fb6b2;
+  background-color: #d91143;
   min-height: 140px;
   text-align: center;
   border-top: 1px solid #1c1719;
@@ -456,47 +456,34 @@ section h1 {
 }
 
 .intro {
-  min-height: calc(100vh - 80px);
   padding: 0;
-  display: flex;
-  flex-direction: column;
 }
 .intro h1 {
   text-align: start;
   margin-bottom: 0;
 }
-.intro #greetings {
-  padding: 40px 2.5rem;
-  border-bottom: 1px solid #1c1719;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.intro h2 {
-  text-align: center;
-  padding: 32px 2.5rem;
-}
+.intro #greetings,
+.intro .jobs > h2,
 .intro .portrait {
   padding: 40px 2.5rem;
 }
+.intro .jobs h2 {
+  text-align: center;
+}
 .intro .portrait img {
-  max-width: 100%;
-  height: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  object-position: top;
+  opacity: 95%;
   border: 1px solid #1c1719;
   border-radius: 2px;
-  opacity: 95%;
+  object-fit: cover;
+  object-position: top;
 }
-.intro .portrait #arty,
-.intro .portrait #glitchy {
+.intro #arty,
+.intro #glitchy {
   display: none;
 }
 
 .projects h1 {
-  color: #d91143;
+  color: #2fb6b2;
 }
 .projects .card-block {
   width: 100%;
@@ -519,17 +506,19 @@ section h1 {
 
 /* SMALL */
 @media only screen and (max-width: 600px) {
-  .jobs {
-    border-bottom: 1px solid #1c1719;
+  .jobs,
+  .portrait {
+    border-top: 1px solid #1c1719;
   }
   .portrait img {
+    width: 100%;
     aspect-ratio: 1/1;
   }
   .card-block {
     flex-direction: column;
   }
 }
-/* MEDIUM */
+/* MEDIUM CARDS*/
 @media only screen and (min-width: 601px) and (max-width: 860px) {
   .card-block {
     flex-direction: column;
@@ -538,42 +527,115 @@ section h1 {
 }
 /* FROM MEDIUM ON */
 @media only screen and (min-width: 601px) {
-  .intro #descr {
-    flex-grow: 2;
-    height: 100%;
+  .intro {
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #greetings {
+    flex-grow: 1;
+  }
+  #info {
+    border-top: 1px solid #1c1719;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr 1fr;
+    flex-grow: 4;
   }
-  .intro #descr #design {
-    grid-column: 1/4;
+  .portrait {
+    grid-column: 4/8;
+    grid-row: 1;
+    border-left: 1px solid #1c1719;
+    border-right: 1px solid #1c1719;
   }
-  .intro #descr .jobs {
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 7/4;
+  }
+  .jobs {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .intro #descr #develop {
+  #design {
+    grid-column: 1/4;
+  }
+  #develop {
     grid-column: -1/-4;
   }
-  .intro #descr .portrait {
-    grid-column: 4/8;
-    grid-row: 1/2;
-    border-left: 1px solid #1c1719;
-    border-right: 1px solid #1c1719;
+  /* .intro {
+  	#descr {
+  		flex-grow: 2;
+  		height: 100%;
+  		display: grid;
+  		grid-template-columns: repeat(10, 1fr);
+
+  		#design {
+  			grid-column: 1 / 4;
+  		}
+
+  		.jobs {
+  			display: flex;
+  			align-items: center;
+  			justify-content: center;
+  		}
+
+  		#develop {
+  			grid-column: -1 / -4;
+  		}
+
+  		.portrait {
+  			grid-column: 4 / 8;
+  			grid-row: 1 / 2;
+  			border-left: 1px solid var.$darkgrey;
+  			border-right: 1px solid var.$darkgrey;
+  		}
+  	}
+  } */
+}
+/* MEDIUM FIRST SECTION */
+@media only screen and (min-width: 601px) and (max-width: 1100px) {
+  #design,
+  #develop {
+    grid-column: 1/6;
+  }
+  #design {
+    border-bottom: 1px solid #1c1719;
+  }
+  .portrait {
+    grid-column: 6/11;
+    grid-row: 1/3;
+    border-right: none;
   }
 }
-/* MEDIUM TO LARGE */
-@media only screen and (min-width: 601px) and (max-width: 1100px) {
-  #descr h2 {
-    transform: rotate(-90deg);
-    height: min-content;
+/* LARGE */
+@media only screen and (min-width: 1100px) {
+  #develop,
+  #design,
+  .portrait {
+    grid-row: 1/3;
   }
 }
 /* ONLY HOVER DEVICES */
 @media only screen and (hover: hover) {
-  /* #design:hover {
-  	& ~ figure #arty {
-  		display: initial;
-  	}
-  } */
+  #design:hover {
+    background-color: rgba(217, 17, 67, 0.25);
+  }
+  #design:hover ~ figure #arty {
+    display: initial;
+  }
+  #design:hover ~ figure #grayscale {
+    display: none;
+  }
+  #develop:hover {
+    background-color: rgba(47, 182, 178, 0.25);
+  }
+  #develop:hover ~ figure #glitchy {
+    display: initial;
+  }
+  #develop:hover ~ figure #grayscale {
+    display: none;
+  }
 }

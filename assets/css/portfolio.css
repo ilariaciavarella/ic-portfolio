@@ -185,10 +185,10 @@ nav #close-btn {
     transform: scaleX(1);
   }
   .nav-link:active {
-    color: #d91143;
+    color: #2fb6b2;
   }
   .nav-link:active::after {
-    background-color: #d91143;
+    background-color: #2fb6b2;
   }
 }
 /* ---------------------------------------------------------- */
