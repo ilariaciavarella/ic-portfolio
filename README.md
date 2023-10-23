@@ -1,5 +1,5 @@
 # ic-portfolio
 
-Ilaria Ciavarella's website portfolio
+Ilaria Ciavarella's website
 
-It started as a start2impact project, but I'd like to make it my ultimate portfolio online.
+Online portfolio for my Graphic Design and Web Development projects
